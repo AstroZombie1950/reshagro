@@ -69,6 +69,11 @@ document.querySelectorAll(".nav__link").forEach(link => {
 	link.addEventListener("click", closeMenu);
 });
 
+// Закрытие по клику кнопку
+document.querySelectorAll(".btn-nav").forEach(link => {
+	link.addEventListener("click", closeMenu);
+});
+
 
 // ================= SMOOTH SCROLL =================
 

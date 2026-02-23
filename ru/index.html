@@ -1,3 +1,14 @@
+<?php
+session_start();
+
+// Генерация случайной капчи
+$a = rand(1, 9);
+$b = rand(1, 9);
+$_SESSION['captcha_answer'] = $a + $b;
+
+// Таймер антибота
+$_SESSION['form_time'] = time();
+?>
 <head>
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -49,15 +60,36 @@
 					<a href="#equipment" class="nav__link">Оборудование</a>
 					<a href="#services" class="nav__link">Услуги</a>
 					<a href="#projects" class="nav__link">Наши работы</a>
+					<button class="btn btn-primary btn-nav" id="openModal">Рассчитать стоимость</button>
 				</nav>
-				<button class="btn btn-primary btn-head" id="openModal">
-					Рассчитать стоимость
-				</button>
-				<div class="burger" id="burger">
-					<span></span>
-					<span></span>
-					<span></span>
+				<div class="header__actions">
+					<div class="lang-switcher" data-lang-switcher>
+						<button class="lang-switcher__toggle" type="button" aria-expanded="false">
+							<span class="lang-flag">🇷🇺</span>
+							<span class="lang-code">RU</span>
+							<svg class="lang-arrow" viewBox="0 0 24 24">
+								<path d="M7 10l5 5 5-5" fill="none" stroke="currentColor" stroke-width="2"/>
+							</svg>
+						</button>
+						<ul class="lang-switcher__dropdown">
+							<li data-lang="en" data-flag="🇬🇧">EN 🇬🇧</li>
+							<li data-lang="de" data-flag="🇩🇪">DE 🇩🇪</li>
+							<li data-lang="fr" data-flag="🇫🇷">FR 🇫🇷</li>
+							<li data-lang="it" data-flag="🇮🇹">IT 🇮🇹</li>
+							<li data-lang="es" data-flag="🇪🇸">ES 🇪🇸</li>
+							<li data-lang="pl" data-flag="🇵🇱">PL 🇵🇱</li>
+							<li data-lang="ro" data-flag="🇷🇴">RO 🇷🇴</li>
+							<li data-lang="sr" data-flag="🇷🇸">SR 🇷🇸</li>
+							<li data-lang="ru" data-flag="🇷🇺">RU 🇷🇺</li>
+						</ul>
+					</div>
+					<div class="burger" id="burger">
+						<span></span>
+						<span></span>
+						<span></span>
+					</div>
 				</div>
+				<button class="btn btn-primary btn-head" id="openModal">Рассчитать стоимость</button>
 			</div>
 		</div>
 	</header>
@@ -366,32 +398,33 @@
 	<section class="contact reveal">
 		<div class="container">
 			<h2 class="section-title contact__title">Отправьте проект на расчёт</h2>
-			<form class="contact-form">
-				<div class="contact-form__row">
-					<input type="text" placeholder="Имя">
-					<input type="email" placeholder="Email">
-				</div>
-				<div class="contact-form__upload">
-					<div class="upload-box">
-						<div class="upload-icon">
-							<svg width="40" height="40" viewBox="0 0 24 24" fill="none">
-								<path d="M12 16V4M12 4L8 8M12 4L16 8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-								<path d="M4 20H20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-							</svg>
-						</div>
-						<div class="upload-text">
-							<p class="upload-title">Добавьте чертёж</p>
-							<p class="upload-sub">Нажмите, чтобы выбрать файл</p>
-							<p class="upload-note">До 10 файлов (zip, jpg, png, docx, xlsx, pdf, dxf, dwg)</p>
-						</div>
+			<form id="projectForm" class="contact-form" enctype="multipart/form-data">
+				<div class="contact-form__content">
+					<div class="contact-form__row">
+						<input type="text" name="name" placeholder="Имя" requiredpattern="^[A-Za-zА-Яа-яЁё\s]+$">
+						<input type="email" name="email" placeholder="Email" required>
 					</div>
+					<div class="contact-form__upload">
+						<label class="upload-box">
+							<input type="file" name="files[]" multiple hidden accept=".zip,.jpg,.jpeg,.png,.docx,.xlsx,.pdf,.dxf,.dwg">
+							<div class="upload-text">
+								<p class="upload-title">Добавьте чертёж</p>
+								<p class="upload-sub">До 10 файлов (макс. 20 МБ каждый)</p>
+								<p class="upload-note">zip, jpg, png, docx, xlsx, pdf, dxf, dwg</p>
+							</div>
+						</label>
+						<div class="file-list"></div>
+					</div>
+					<textarea name="message" placeholder="Опишите материал, объём, количество и детали"></textarea>
+					<div class="contact-form__captcha">
+						<label>Сколько будет <?php echo $a; ?> + <?php echo $b; ?>?</label>
+						<input type="number" name="captcha" required>
+					</div>
+					<!-- Honeypot -->
+					<input type="text" name="company" style="display:none"autocomplete="off">
+					<button type="submit">Отправить</button>
 				</div>
-				<textarea placeholder="Опишите материал, объём, количество и другие детали для расчёта"></textarea>
-				<div class="contact-form__captcha">
-					<label>Сколько будет 2 + 3?</label>
-					<input type="text" placeholder="Введите ответ">
-				</div>
-				<button type="button" class="btn-gradient">Отправить</button>
+				<div class="form-alert"></div>
 			</form>
 		</div>
 	</section>
@@ -440,6 +473,124 @@
 			</div>
 		</div>
 	</footer>
+	<!-- ================= Modal ================= -->
+	<div class="rg-modal" id="projectModal" aria-hidden="true">
+		<div class="rg-modal__overlay" data-modal-close></div>
+		<div class="rg-modal__window" role="dialog" aria-modal="true">
+			<button class="rg-modal__close" data-modal-close></button>
+			<h3 class="rg-modal__title">Рассчитать стоимость</h3>
+			<p class="modal_desc">Пришлите детали задачи, и мы подготовим расчёт стоимости в кратчайшие сроки</p>
+			<form id="projectFormModal" class="contact-form contact-form--modal" enctype="multipart/form-data">
+				<div class="contact-form__content-modal">
+					<div class="contact-form__row-modal">
+						<input type="text" name="name" placeholder="Имя" required pattern="^[A-Za-zА-Яа-яЁё\s]+$">
+						<input type="email" name="email" placeholder="Email" required>
+					</div>
+					<textarea class="text_modal" name="message" placeholder="Кратко опишите задачу"></textarea>
+					<div class="contact-form__upload">
+						<label class="upload-box">
+							<input type="file" name="files[]" multiple hidden>
+							<div class="upload-text">
+								<p class="upload-title">Добавить файлы</p>
+							</div>
+						</label>
+						<div class="file-list"></div>
+					</div>
+					<div class="contact-form__captcha-modal">
+						<label>Сколько будет <?php echo $a; ?> + <?php echo $b; ?>?</label>
+						<input type="number" name="captcha" required>
+					</div>
+					<input type="text" name="company" style="display:none" autocomplete="off">
+					<button class="modal_submit_btn" type="submit">Отправить</button>
+				</div>
+				<div class="form-alert-modal"></div>
+			</form>
+		</div>
+	</div>
+	<script>
+	const ReshagroModal = (function() {
+
+		let modal, body, scrollY;
+
+		function open() {
+			scrollY = window.scrollY;
+			body.style.top = `-${scrollY}px`;
+			body.classList.add('modal-lock');
+			modal.classList.add('is-open');
+			modal.setAttribute('aria-hidden', 'false');
+		}
+
+		function close() {
+			modal.classList.remove('is-open');
+			modal.setAttribute('aria-hidden', 'true');
+			body.classList.remove('modal-lock');
+			body.style.top = '';
+			window.scrollTo(0, scrollY);
+		}
+
+		function bindTriggers() {
+			document.querySelectorAll('#openModal, .btn-head, .btn-primary')
+				.forEach(btn => {
+					btn.addEventListener('click', open);
+				});
+		}
+
+		function bindClose() {
+			modal.addEventListener('click', function(e) {
+				if (e.target.hasAttribute('data-modal-close')) {
+					close();
+				}
+			});
+
+			document.addEventListener('keydown', function(e) {
+				if (e.key === 'Escape') close();
+			});
+		}
+
+		function autoOpen() {
+			if (sessionStorage.getItem('rgFormSubmitted')) return;
+
+			setTimeout(() => {
+				if (!sessionStorage.getItem('rgFormSubmitted')) {
+					open();
+				}
+			}, 60000);// ------------ таймер показа (мс)
+		}
+
+		function watchSuccess() {
+			const alerts = document.querySelectorAll('.form-alert');
+
+			alerts.forEach(alert => {
+				const observer = new MutationObserver(() => {
+					if (alert.textContent.trim().length > 0) {
+						sessionStorage.setItem('rgFormSubmitted', '1');
+					}
+				});
+				observer.observe(alert, { childList: true });
+			});
+		}
+
+		function init() {
+			modal = document.getElementById('projectModal');
+			body = document.body;
+
+			if (!modal) return;
+
+			bindTriggers();
+			bindClose();
+			autoOpen();
+			watchSuccess();
+		}
+
+		return { init };
+
+	})();
+
+	document.addEventListener('DOMContentLoaded', ReshagroModal.init);
+	</script>
+	<script src="/js/language-switcher.js"></script>
 	<script src="/js/main.js"></script>
+	<script src="/js/modal.js"></script>
+	<script src="/js/form.js"></script>
 </body>
 </html>
