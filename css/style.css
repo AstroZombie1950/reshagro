@@ -243,7 +243,16 @@ section {
 	align-items: center;
 	gap: 20px;
 }
+.lang-switcher img {
+	display: inline-block;
+	vertical-align: middle;
+	margin: 0 3px 3px 0;
+	width: 15px;
+}
 
+.lang-switcher__toggle img {
+	margin: 0;
+}
 /* ================= HERO ================= */
 
 .hero {
@@ -573,27 +582,10 @@ section {
 
 .equipment__cta {
 	position: relative;
-	padding: 40px 50px 20px 30px;
-	background: linear-gradient(
-		135deg,
-		#152844c2,
-		#0b1423
-	);
-	box-shadow:
-		0 20px 60px rgba(0, 0, 0, 0.6),
-		inset 0 0 60px rgba(14, 95, 168, 0.25);
+	padding: 30px;
 	display: inline-flex;
 	align-items: center;
 	justify-content: center;
-}
-
-.equipment__cta::after {
-	content: "";
-	position: absolute;
-	inset: 0;
-	box-shadow:
-		0 0 80px rgba(11, 46, 79, 0.25);
-	pointer-events: none;
 }
 
 .equipment__cta .btn {
@@ -1384,6 +1376,7 @@ html, body {
 
 .contact-form__row-modal input {
 	flex: 1;
+	min-width: 0;
 }
 
 .contact-form  .text_modal {

@@ -65,22 +65,22 @@ $_SESSION['form_time'] = time();
 				<div class="header__actions">
 					<div class="lang-switcher" data-lang-switcher>
 						<button class="lang-switcher__toggle" type="button" aria-expanded="false">
-							<span class="lang-flag">🇷🇺</span>
+							<img class="lang-flag" src="/img/flags/ru.png" alt="RU" width="10" height="10">
 							<span class="lang-code">RU</span>
 							<svg class="lang-arrow" viewBox="0 0 24 24">
 								<path d="M7 10l5 5 5-5" fill="none" stroke="currentColor" stroke-width="2"/>
 							</svg>
 						</button>
 						<ul class="lang-switcher__dropdown">
-							<li data-lang="en" data-flag="🇬🇧">EN 🇬🇧</li>
-							<li data-lang="de" data-flag="🇩🇪">DE 🇩🇪</li>
-							<li data-lang="fr" data-flag="🇫🇷">FR 🇫🇷</li>
-							<li data-lang="it" data-flag="🇮🇹">IT 🇮🇹</li>
-							<li data-lang="es" data-flag="🇪🇸">ES 🇪🇸</li>
-							<li data-lang="pl" data-flag="🇵🇱">PL 🇵🇱</li>
-							<li data-lang="ro" data-flag="🇷🇴">RO 🇷🇴</li>
-							<li data-lang="sr" data-flag="🇷🇸">SR 🇷🇸</li>
-							<li data-lang="ru" data-flag="🇷🇺">RU 🇷🇺</li>
+							<li data-lang="en"><img src="/img/flags/gb.png" alt="EN" width="10" height="10">EN</li>
+							<li data-lang="de"><img src="/img/flags/de.png" alt="DE" width="10" height="10">DE</li>
+							<li data-lang="fr"><img src="/img/flags/fr.png" alt="FR" width="10" height="10">FR</li>
+							<li data-lang="it"><img src="/img/flags/it.png" alt="IT" width="10" height="10">IT</li>
+							<li data-lang="es"><img src="/img/flags/es.png" alt="ES" width="10" height="10">ES</li>
+							<li data-lang="pl"><img src="/img/flags/pl.png" alt="PL" width="10" height="10">PL</li>
+							<li data-lang="ro"><img src="/img/flags/ro.png" alt="RO" width="10" height="10">RO</li>
+							<li data-lang="sr"><img src="/img/flags/rs.png" alt="SR" width="10" height="10">SR</li>
+							<li data-lang="ru"><img src="/img/flags/ru.png" alt="RU" width="10" height="10">RU</li>
 						</ul>
 					</div>
 					<div class="burger" id="burger">
