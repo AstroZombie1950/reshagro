@@ -50,7 +50,7 @@ $_SESSION['form_time'] = time();
 			<div class="header__inner">
 				<a href="/" class="logo">
 					<img 
-						src="/img/logo.png" 
+						src="/img/logo_border.png" 
 						alt="Reshagro Engineering Center"
 						loading="eager"
 					>
@@ -98,14 +98,9 @@ $_SESSION['form_time'] = time();
 		<div class="hero__overlay"></div>
 		<div class="container">
 			<div class="hero__content hero__content--animate">
-				<h1 class="hero__title">
-					Токарная и фрезерная обработка металла на заказ
-				</h1>
+				<h1 class="hero__title">Токарная и фрезерная обработка металла на заказ</h1>
 				<div class="hero__underline"></div>
-				<p class="hero__text">
-					Высокоточная механическая обработка деталей по чертежам. 
-					Серийное и единичное производство для предприятий и частных заказчиков.
-				</p>
+				<p class="hero__text">Компания Reshagro предлагает своим клиентам услугу — фрезерную обработку металла на заказ<br>На наших производственных площадках имеются универсальные станки и станки с ЧПУ для фрезерной обработки. На них производится горизонтальное и вертикальное фрезерование с точностью до 6 квалитета. Наша компания работает с черными, цветными и нержавеющими металлами. Высокоточная механическая обработка деталей по чертежам. Серийное и единичное производство для предприятий и частных заказчиков.</p>
 			</div>
 		</div>
 	</section>
@@ -243,7 +238,7 @@ $_SESSION['form_time'] = time();
 					</p>
 				</div>
 				<div class="equipment__cta">
-					<button class="btn btn-primary">Расчёт<br>СТОИМОСТИ</button>
+					<button class="btn btn-primary">Расчёт<br>СТОИМОСТИ ЗАКАЗА</button>
 				</div>
 			</div>
 		</div>
@@ -257,31 +252,31 @@ $_SESSION['form_time'] = time();
 					<div class="service-card__bg"></div>
 					<h3>Токарная и фрезерная обработка металлов и пластмасс</h3>
 					<p>Высокоточная механическая обработка на современном оборудовании.</p>
-					<button class="btn btn-primary">от 100 €</button>
+					<button class="btn btn-primary">от 10 € за шт.</button>
 				</div>
 				<div class="service-card service-card--2">
 					<div class="service-card__bg"></div>
 					<h3>Изготовление деталей на заказ по чертежам</h3>
 					<p>Производство по вашим техническим заданиям и образцам.</p>
-					<button class="btn btn-primary">от 120 €</button>
+					<button class="btn btn-primary">от 5 € за шт.</button>
 				</div>
 				<div class="service-card service-card--3">
 					<div class="service-card__bg"></div>
 					<h3>Серийное и единичное производство</h3>
 					<p>Изготовление партий деталей любого объёма.</p>
-					<button class="btn btn-primary">от 150 €</button>
+					<button class="btn btn-primary">от 15 € за шт.</button>
 				</div>
 				<div class="service-card service-card--4">
 					<div class="service-card__bg"></div>
 					<h3>Инженерные и технологические консультации</h3>
 					<p>Подбор оптимальных решений и сопровождение проекта.</p>
-					<button class="btn btn-primary">от 80 €</button>
+					<button class="btn btn-primary">от 12 € за шт.</button>
 				</div>
 				<div class="service-card service-card--5">
 					<div class="service-card__bg"></div>
 					<h3>Сборочные и вторичные операции</h3>
 					<p>Комплексная обработка и подготовка изделий.</p>
-					<button class="btn btn-primary">от 90 €</button>
+					<button class="btn btn-primary">от 8 € за шт.</button>
 				</div>
 				<div class="service-card--6">
 					<div class="service-card__bg"></div>
@@ -292,7 +287,7 @@ $_SESSION['form_time'] = time();
 			</div>
 		</div>
 	</section>
-	<!-- ================= Виды работ ================= -->
+	<!-- ================= виды работ ================= -->
 	<section class="work-types ba-block reveal">
 		<div class="container">
 			<div class="work-types__grid">
@@ -330,7 +325,7 @@ $_SESSION['form_time'] = time();
 			</div>
 		</div>
 	</section>
-	<!-- ================= Наши работы ================= -->
+	<!-- ================= наши работы ================= -->
 	<section class="projects ba-block reveal" id="projects">
 		<div class="container">
 			<h2 class="t30 fw7 mb3">Наши работы</h2>
@@ -394,7 +389,7 @@ $_SESSION['form_time'] = time();
 			</button>
 		</div>
 	</section>
-	<!-- ================= Отправка проекта ================= -->
+	<!-- ================= отправка проекта ================= -->
 	<section class="contact reveal">
 		<div class="container">
 			<h2 class="section-title contact__title">Отправьте проект на расчёт</h2>
@@ -407,13 +402,26 @@ $_SESSION['form_time'] = time();
 					<div class="contact-form__upload">
 						<label class="upload-box">
 							<input type="file" name="files[]" multiple hidden accept=".zip,.jpg,.jpeg,.png,.docx,.xlsx,.pdf,.dxf,.dwg">
+							<div class="upload-icon">
+								<svg width="48" height="48" viewBox="0 0 24 24" fill="none"
+									xmlns="http://www.w3.org/2000/svg">
+									<path d="M12 16V4M12 4L8 8M12 4L16 8"
+										stroke="white" stroke-width="2"
+										stroke-linecap="round" stroke-linejoin="round"/>
+									<path d="M4 16V18C4 19.1046 4.89543 20 6 20H18C19.1046 20 20 19.1046 20 18V16"
+										stroke="white" stroke-width="2"
+										stroke-linecap="round" stroke-linejoin="round"/>
+								</svg>
+							</div>
 							<div class="upload-text">
 								<p class="upload-title">Добавьте чертёж</p>
-								<p class="upload-sub">До 10 файлов (макс. 20 МБ каждый)</p>
-								<p class="upload-note">zip, jpg, png, docx, xlsx, pdf, dxf, dwg</p>
+								<p class="upload-sub">Нажмите на ссылку, чтобы выбрать файл</p>
 							</div>
 						</label>
 						<div class="file-list"></div>
+						<div class="warning">
+							<p class="warning-text">Можно загрузить не более 10 файлов.</p>
+						</div>
 					</div>
 					<textarea name="message" placeholder="Опишите материал, объём, количество и детали"></textarea>
 					<div class="contact-form__captcha">
@@ -428,7 +436,7 @@ $_SESSION['form_time'] = time();
 			</form>
 		</div>
 	</section>
-	<!-- ================= Footer ================= -->
+	<!-- ================= footer ================= -->
 	<footer class="footer">
 		<div class="container">
 			<div class="footer-row">
@@ -473,9 +481,9 @@ $_SESSION['form_time'] = time();
 			</div>
 		</div>
 	</footer>
-	<!-- ================= Modal ================= -->
+	<!-- ================= modal ================= -->
 	<div class="rg-modal" id="projectModal" aria-hidden="true">
-		<div class="rg-modal__overlay" data-modal-close></div>
+		<div class="rg-modal__overlay"></div>
 		<div class="rg-modal__window" role="dialog" aria-modal="true">
 			<button class="rg-modal__close" data-modal-close></button>
 			<h3 class="rg-modal__title">Рассчитать стоимость</h3>
@@ -489,12 +497,19 @@ $_SESSION['form_time'] = time();
 					<textarea class="text_modal" name="message" placeholder="Кратко опишите задачу"></textarea>
 					<div class="contact-form__upload">
 						<label class="upload-box">
-							<input type="file" name="files[]" multiple hidden>
+							<input type="file" name="files[]" multiple hidden accept=".zip,.jpg,.jpeg,.png,.docx,.xlsx,.pdf,.dxf,.dwg">
+							<div class="upload-icon">
+								<img src="/img/upload.svg" alt="Загрузка файла" width="48" height="48">
+							</div>
 							<div class="upload-text">
-								<p class="upload-title">Добавить файлы</p>
+								<p class="upload-title">Добавьте чертёж</p>
+								<p class="upload-sub">Нажмите на ссылку, чтобы выбрать файл</p>
 							</div>
 						</label>
 						<div class="file-list"></div>
+						<div class="warning">
+							<p class="warning-text">Можно загрузить не более 10 файлов.</p>
+						</div>
 					</div>
 					<div class="contact-form__captcha-modal">
 						<label>Сколько будет <?php echo $a; ?> + <?php echo $b; ?>?</label>
@@ -512,13 +527,41 @@ $_SESSION['form_time'] = time();
 
 		let modal, body, scrollY;
 
-		function open() {
+		/* ===== Тексты модального окна ===== */
+
+		const modalContent = {
+			default: {
+				title: 'Рассчитать стоимость',
+				desc: 'Пришлите детали задачи, и мы подготовим расчёт стоимости в кратчайшие сроки'
+			},
+			auto: {
+				title: 'Остались вопросы?',
+				desc: 'Оставьте заявку, и мы бесплатно проконсультируем вас'
+			}
+		};
+
+		function setContent(type) {
+			const titleEl = modal.querySelector('.rg-modal__title');
+			const descEl = modal.querySelector('.modal_desc');
+
+			titleEl.textContent = modalContent[type].title;
+			descEl.textContent = modalContent[type].desc;
+		}
+
+		/* ===== Открытие ===== */
+
+		function open(type = 'default') {
+
+			setContent(type);
+
 			scrollY = window.scrollY;
 			body.style.top = `-${scrollY}px`;
 			body.classList.add('modal-lock');
 			modal.classList.add('is-open');
 			modal.setAttribute('aria-hidden', 'false');
 		}
+
+		/* ===== Закрытие ===== */
 
 		function close() {
 			modal.classList.remove('is-open');
@@ -528,14 +571,19 @@ $_SESSION['form_time'] = time();
 			window.scrollTo(0, scrollY);
 		}
 
+		/* ===== Кнопки открытия ===== */
+
 		function bindTriggers() {
 			document.querySelectorAll('#openModal, .btn-head, .btn-primary')
 				.forEach(btn => {
-					btn.addEventListener('click', open);
+					btn.addEventListener('click', () => open('default'));
 				});
 		}
 
+		/* ===== Закрытие ===== */
+
 		function bindClose() {
+
 			modal.addEventListener('click', function(e) {
 				if (e.target.hasAttribute('data-modal-close')) {
 					close();
@@ -547,30 +595,45 @@ $_SESSION['form_time'] = time();
 			});
 		}
 
+		/* ===== Авто-открытие через 60 сек ===== */
+
 		function autoOpen() {
+
 			if (sessionStorage.getItem('rgFormSubmitted')) return;
 
 			setTimeout(() => {
+
 				if (!sessionStorage.getItem('rgFormSubmitted')) {
-					open();
+					open('auto');
 				}
-			}, 60000);// ------------ таймер показа (мс)
+
+			}, 60000);//<------------таймаут открытия (мс)
+
 		}
 
+		/* ===== Отслеживание отправки формы ===== */
+
 		function watchSuccess() {
-			const alerts = document.querySelectorAll('.form-alert');
+
+			const alerts = document.querySelectorAll('.form-alert, .form-alert-modal');
 
 			alerts.forEach(alert => {
+
 				const observer = new MutationObserver(() => {
+
 					if (alert.textContent.trim().length > 0) {
 						sessionStorage.setItem('rgFormSubmitted', '1');
 					}
+
 				});
+
 				observer.observe(alert, { childList: true });
+
 			});
 		}
 
 		function init() {
+
 			modal = document.getElementById('projectModal');
 			body = document.body;
 
