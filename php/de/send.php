@@ -2,18 +2,18 @@
 session_start();
 header('Content-Type: application/json');
 
-$to = "TEMPMAIL@gmail.com"; // ----------- email
+$to = "TEMPMAIL@gmail.com"; // --------------------------------------------------- email
 $subject = "New inquiry from Reshagro website";
 
 /* ===== 1. Honeypot ===== */
 if (!empty($_POST['company'])) {
-	echo json_encode(["success" => false, "message" => "Verification error."]);
+	echo json_encode(["success" => false, "message" => "Überprüfungsfehler."]);// <--------------------------------------
 	exit;
 }
 
 /* ===== 2. Timer (minimum 3 sec) ===== */
 if (!isset($_SESSION['form_time']) || (time() - $_SESSION['form_time']) < 3) {
-	echo json_encode(["success" => false, "message" => "The form was submitted too quickly."]);
+	echo json_encode(["success" => false, "message" => "Das Formular wurde zu schnell abgesendet."]);// <--------------------------------------
 	exit;
 }
 
@@ -21,7 +21,7 @@ if (!isset($_SESSION['form_time']) || (time() - $_SESSION['form_time']) < 3) {
 if (!isset($_SESSION['captcha_answer']) || 
 	$_POST['captcha'] != $_SESSION['captcha_answer']) {
 
-	echo json_encode(["success" => false, "message" => "Incorrect CAPTCHA answer."]);
+	echo json_encode(["success" => false, "message" => "Falsche CAPTCHA-Antwort."]);// <--------------------------------------
 	exit;
 }
 
@@ -32,12 +32,12 @@ $email = filter_var($_POST['email'], FILTER_VALIDATE_EMAIL);
 $message = trim($_POST['message']);
 
 if (!preg_match("/^[A-Za-zА-Яа-яЁё\s]+$/u", $name)) {
-	echo json_encode(["success" => false, "message" => "Invalid name format."]);
+	echo json_encode(["success" => false, "message" => "Ungültiger Name."]);// <--------------------------------------
 	exit;
 }
 
 if (!$email) {
-	echo json_encode(["success" => false, "message" => "Invalid email address."]);
+	echo json_encode(["success" => false, "message" => "Ungültige E-Mail-Adresse."]);// <--------------------------------------
 	exit;
 }
 
@@ -64,7 +64,7 @@ $maxFiles = 10;
 if (!empty($_FILES['files']['name'][0])) {
 
 	if (count($_FILES['files']['name']) > $maxFiles) {
-		echo json_encode(["success" => false, "message" => "Too many files uploaded."]);
+		echo json_encode(["success" => false, "message" => "Zu viele Dateien."]);// <--------------------------------------
 		exit;
 	}
 
@@ -79,12 +79,12 @@ if (!empty($_FILES['files']['name'][0])) {
 			$ext = strtolower(pathinfo($fileName, PATHINFO_EXTENSION));
 
 			if (!in_array($ext, $allowed)) {
-				echo json_encode(["success" => false, "message" => "Unsupported file format."]);
+				echo json_encode(["success" => false, "message" => "Unzulässiges Dateiformat."]);// <--------------------------------------
 				exit;
 			}
 
 			if ($fileSize > $maxSize) {
-				echo json_encode(["success" => false, "message" => "File size exceeds the limit."]);
+				echo json_encode(["success" => false, "message" => "Datei ist zu groß."]);// <--------------------------------------
 				exit;
 			}
 
@@ -109,5 +109,5 @@ if ($mailSent) {
 	unset($_SESSION['captcha_answer']);
 	echo json_encode(["success" => true]);
 } else {
-	echo json_encode(["success" => false, "message" => "Server error."]);
+	echo json_encode(["success" => false, "message" => "Serverfehler."]);// <--------------------------------------
 }

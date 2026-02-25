@@ -1010,6 +1010,25 @@ html, body {
     color: rgba(255, 255, 255, 0.85);
 }
 
+.field {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+}
+
+.field-error {
+	font-size: 12px;
+	color: #d60000;
+	margin-top: 6px;
+	min-height: 16px;
+	opacity: 0;
+	transition: opacity .2s ease;
+}
+
+.field-error.is-visible {
+	opacity: 1;
+}
+
 /* ================= Form Layout ================= */
 
 .contact-form {

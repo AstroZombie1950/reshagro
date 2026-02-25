@@ -1,12 +1,3 @@
-<?php
-session_start();
-
-$a = rand(1, 9);
-$b = rand(1, 9);
-$_SESSION['captcha_answer'] = $a + $b;
-
-$_SESSION['form_time'] = time();
-?>
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
@@ -402,7 +393,7 @@ $_SESSION['form_time'] = time();
 	<section class="contact reveal">
 		<div class="container">
 			<h2 class="section-title contact__title">Submit Your Project for a Quote</h2>
-			<form id="projectForm" class="contact-form" enctype="multipart/form-data">
+			<form id="projectForm" class="contact-form" enctype="multipart/form-data" novalidate>
 				<div class="contact-form__content">
 					<div class="contact-form__row">
 						<input type="text" name="name" placeholder="Name" requiredpattern="^[A-Za-zА-Яа-яЁё\s]+$">
@@ -434,7 +425,7 @@ $_SESSION['form_time'] = time();
 					</div>
 					<textarea name="message" placeholder="Describe material, volume, quantity, and project details"></textarea>
 					<div class="contact-form__captcha">
-						<label>What is <?php echo $a; ?> + <?php echo $b; ?>?</label>
+						<label id="captchaLabel"></label>
 						<input type="number" name="captcha" required>
 					</div>
 					<!-- Honeypot -->
@@ -662,7 +653,7 @@ $_SESSION['form_time'] = time();
 	</script>
 	<script src="/js/language-switcher.js"></script>
 	<script src="/js/main.js"></script>
-	<script src="/js/modal.js"></script>
-	<script src="/js/form.js"></script>
+	<script src="/js/en/modal.js"></script>
+	<script src="/js/en/form.js"></script>
 </body>
 </html>

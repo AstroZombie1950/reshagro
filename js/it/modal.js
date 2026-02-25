@@ -1,10 +1,10 @@
 document.addEventListener("DOMContentLoaded", function () {
 
-	const form = document.getElementById("projectForm");
+	const form = document.getElementById("projectFormModal");
 	if (!form) return;
 
-	const alertBox = form.querySelector(".form-alert");
-	const formContent = form.querySelector(".contact-form__content");
+	const alertBox = form.querySelector(".form-alert-modal");
+	const formContent = form.querySelector(".contact-form__content-modal");
 	const fileInput = form.querySelector("input[type='file']");
 	const submitBtn = form.querySelector("button");
     const nameInput = form.querySelector("input[name='name']");
@@ -171,7 +171,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 		if (files.length > maxFiles) {
 			setInvalid(fileInput);
-			showError("Maximum 10 files allowed.");
+			showError("Massimo 10 file consentiti.");// <--------------------------------------------------------------------------------
 			return;
 		}
 
@@ -180,7 +180,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 			if (!allowedExtensions.includes(ext) || file.size > maxFileSize) {
 				setInvalid(fileInput);
-				showError("Invalid file format or file size exceeds the limit.");
+				showError("File non valido o dimensione superata.");// <---------------------------------------------------------
 				return;
 			}
 		}
@@ -192,7 +192,7 @@ document.addEventListener("DOMContentLoaded", function () {
 		const formData = new FormData(form);
 
 		try {
-			const response = await fetch("/php/send.php", {
+			const response = await fetch("/php/it/send.php", {
 				method: "POST",
 				body: formData
 			});
@@ -202,14 +202,14 @@ document.addEventListener("DOMContentLoaded", function () {
 			submitBtn.classList.remove("is-loading");
 
 			if (result.success) {
-				showSuccess("Your inquiry has been successfully submitted. We will contact you shortly.");
+				showSuccess("La tua richiesta è stata inviata con successo. Ti contatteremo a breve.");// <----------------------------
 			} else {
-				showError(result.message || "Submission error.");
+				showError(result.message || "Errore di invio.");// <------------------------------------------------------------
 			}
 
 		} catch (error) {
 			submitBtn.classList.remove("is-loading");
-			showError("Connection error.");
+			showError("Errore di connessione.");// <--------------------------------------------------------------------------------
 		}
 	});
 

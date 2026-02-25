@@ -402,7 +402,7 @@ $_SESSION['form_time'] = time();
 	<section class="contact reveal">
 		<div class="container">
 			<h2 class="section-title contact__title">Prześlij projekt do wyceny</h2>
-			<form id="projectForm" class="contact-form" enctype="multipart/form-data">
+			<form id="projectForm" class="contact-form" enctype="multipart/form-data" novalidate>
 				<div class="contact-form__content">
 					<div class="contact-form__row">
 						<input type="text" name="name" placeholder="Imię" requiredpattern="^[A-Za-zА-Яа-яЁё\s]+$">
@@ -662,7 +662,7 @@ $_SESSION['form_time'] = time();
 	</script>
 	<script src="/js/language-switcher.js"></script>
 	<script src="/js/main.js"></script>
-	<script src="/js/modal.js"></script>
-	<script src="/js/form.js"></script>
+	<script src="/js/pl/modal.js"></script>
+	<script src="/js/pl/form.js"></script>
 </body>
 </html>
