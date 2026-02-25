@@ -58,20 +58,16 @@
 	function autoDetect() {
 
 		const currentPath = normalizePath(window.location.pathname);
-
-		// Автоопределение только если пользователь на корне
-		if (currentPath !== '/') return;
-
-		// Проверяем сохранённый язык
 		const saved = localStorage.getItem(storageKey);
+		const browserLang = getBrowserLang();
+		
+		// Проверяем сохранённый язык
 		if (saved && supported.includes(saved)) {
 			redirectTo(saved);
 			return;
 		}
 
 		// Определяем по браузеру
-		const browserLang = getBrowserLang();
-
 		if (browserLang && supported.includes(browserLang)) {
 			redirectTo(browserLang);
 		} else {

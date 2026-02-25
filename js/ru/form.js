@@ -29,6 +29,8 @@ document.addEventListener("DOMContentLoaded", function () {
 			.then(data => {
 				const label = document.getElementById('captchaLabel');
 				label.textContent = `CAPTCHA: ${data.a} + ${data.b}?`;
+				const label_modal = document.getElementById('captchaLabel_modal');
+				label_modal.textContent = `CAPTCHA: ${data.a} + ${data.b}?`;
 			});
 	}
 
