@@ -1,25 +1,16 @@
-<?php
-session_start();
-
-$a = rand(1, 9);
-$b = rand(1, 9);
-$_SESSION['captcha_answer'] = $a + $b;
-
-$_SESSION['form_time'] = time();
-?>
-<html lang="fr">
+<html lang="ro">
 <head>
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Tournage & Fraisage CNC sur mesure | Fabrication de pièces mécaniques | Reshagro Engineering Center</title>
-	<meta name="description" content="Services de tournage et fraisage CNC pour pièces en métal et plastique. Fabrication selon plans techniques, production unitaire et en série, accompagnement technique. Intervention dans toute l'Europe.">
-	<meta name="keywords" content="tournage CNC, fraisage CNC, usinage de précision, fabrication de pièces mécaniques, sous-traitance industrielle, production en série, prototype industriel">
+	<title>Strunjire și Frezare CNC la Comandă | Producție Piese Mecanice | Reshagro Engineering Center</title>
+	<meta name="description" content="Servicii de strunjire și frezare CNC pentru piese din metal și plastic. Producție pe baza desenelor tehnice, prototipuri și serii, suport tehnic și ingineresc. Colaborare la nivel european.">
+	<meta name="keywords" content="strunjire CNC, frezare CNC, prelucrare mecanică, producție piese metalice, servicii CNC, producție de serie, prototipuri industriale, subcontractare industrială">
 	<meta name="author" content="Reshagro Engineering Center">
 	<meta name="robots" content="index, follow">
 	<meta name="theme-color" content="#0e5fa8">
 	<!-- Canonical -->
-	<link rel="canonical" href="https://reshagro.com/fr/">
+	<link rel="canonical" href="https://reshagro.com/ro/">
 	<!-- Hreflang -->
 	<link rel="alternate" hreflang="ru" href="https://reshagro.com/ru/">
 	<link rel="alternate" hreflang="de" href="https://reshagro.com/de/">
@@ -32,15 +23,15 @@ $_SESSION['form_time'] = time();
 	<link rel="alternate" hreflang="x-default" href="https://reshagro.com/">
 	<!-- Open Graph -->
 	<meta property="og:type" content="website">
-	<meta property="og:title" content="Tournage & Fraisage CNC | Reshagro">
-	<meta property="og:description" content="Usinage CNC de haute précision pour pièces mécaniques selon plans. Production unitaire et en série.">
-	<meta property="og:url" content="https://reshagro.com/fr/">
+	<meta property="og:title" content="Strunjire și Frezare CNC | Reshagro">
+	<meta property="og:description" content="Prelucrare CNC de înaltă precizie pe baza documentației tehnice. Producție unitară și de serie.">
+	<meta property="og:url" content="https://reshagro.com/ro/">
 	<meta property="og:image" content="https://reshagro.com/img/logo_ogimg.png">
-	<meta property="og:locale" content="fr_FR">
+	<meta property="og:locale" content="ro_RO">
 	<!-- Twitter Card -->
 	<meta name="twitter:card" content="summary_large_image">
-	<meta name="twitter:title" content="Tournage & Fraisage CNC | Reshagro">
-	<meta name="twitter:description" content="Usinage CNC de précision pour pièces métalliques et plastiques.">
+	<meta name="twitter:title" content="Strunjire și Frezare CNC | Reshagro">
+	<meta name="twitter:description" content="Servicii CNC de precizie pentru piese metalice și din plastic.">
 	<meta name="twitter:image" content="https://reshagro.com/img/logo_ogimg.png">
 	<!-- Favicon -->
 	<link rel="icon" href="/favicon.ico" type="image/x-icon">
@@ -65,17 +56,17 @@ $_SESSION['form_time'] = time();
 					>
 				</a>
 				<nav class="nav" id="nav">
-					<a href="#about" class="nav__link">À propos de nous</a>
-					<a href="#equipment" class="nav__link">Équipement</a>
-					<a href="#services" class="nav__link">Services</a>
-					<a href="#projects" class="nav__link">Nos projets</a>
-					<button class="btn btn-primary btn-nav" id="openModal">Demander un devis</button>
+					<a href="#about" class="nav__link">Despre noi</a>
+					<a href="#equipment" class="nav__link">Echipamente</a>
+					<a href="#services" class="nav__link">Servicii</a>
+					<a href="#projects" class="nav__link">Proiectele noastre</a>
+					<button class="btn btn-primary btn-nav" id="openModal">Solicită ofertă</button>
 				</nav>
 				<div class="header__actions">
 					<div class="lang-switcher" data-lang-switcher>
 						<button class="lang-switcher__toggle" type="button" aria-expanded="false">
-							<img class="lang-flag" src="/img/flags/fr.png" alt="FR" width="10" height="10">
-							<span class="lang-code">FR</span>
+							<img class="lang-flag" src="/img/flags/ru.png" alt="RU" width="10" height="10">
+							<span class="lang-code">RU</span>
 							<svg class="lang-arrow" viewBox="0 0 24 24">
 								<path d="M7 10l5 5 5-5" fill="none" stroke="currentColor" stroke-width="2"/>
 							</svg>
@@ -98,7 +89,7 @@ $_SESSION['form_time'] = time();
 						<span></span>
 					</div>
 				</div>
-				<button class="btn btn-primary btn-head" id="openModal">Demander un devis</button>
+				<button class="btn btn-primary btn-head" id="openModal">Solicită ofertă</button>
 			</div>
 		</div>
 	</header>
@@ -107,9 +98,9 @@ $_SESSION['form_time'] = time();
 		<div class="hero__overlay"></div>
 		<div class="container">
 			<div class="hero__content hero__content--animate">
-				<h1 class="hero__title">Usinage de pièces métalliques par tournage et fraisage sur mesure</h1>
+				<h1 class="hero__title">Prelucrare prin strunjire și frezare a metalelor la comandă</h1>
 				<div class="hero__underline"></div>
-				<p class="hero__text">Reshagro propose à ses clients des services de fraisage de métaux sur mesure.<br>Nos sites de production sont équipés de machines universelles et de centres d’usinage CNC dédiés au fraisage. Nous réalisons des opérations de fraisage horizontal et vertical avec une précision jusqu’au grade IT6. Notre entreprise travaille les aciers carbone, les métaux non ferreux et les aciers inoxydables. Usinage mécanique de haute précision de pièces selon plans techniques. Production en série et à l’unité pour les entreprises et les clients privés.</p>
+				<p class="hero__text">Compania Reshagro oferă clienților săi servicii de frezare a metalelor la comandă<br>În unitățile noastre de producție sunt disponibile utilaje universale și mașini CNC pentru operațiuni de frezare. Se realizează frezare orizontală și verticală cu precizie până la clasa IT6. Lucrăm cu oțeluri carbon, metale neferoase și oțeluri inoxidabile. Prelucrare mecanică de înaltă precizie a pieselor conform desenelor tehnice. Producție de serie și unicat pentru companii și clienți individuali.</p>
 			</div>
 		</div>
 	</section>
@@ -121,7 +112,7 @@ $_SESSION['form_time'] = time();
 					<img src="/img/adv/one.png" alt="">
 					<div class="stats__overlay"></div>
 					<div class="stats__content">
-						<p class="stats__label">En activité depuis</p>
+						<p class="stats__label">Activăm din</p>
 						<h3>2018</h3>
 					</div>
 				</div>
@@ -129,32 +120,32 @@ $_SESSION['form_time'] = time();
 					<img src="/img/adv/two.png" alt="">
 					<div class="stats__overlay"></div>
 					<div class="stats__content">
-						<p class="stats__label">Expérience moyenne des spécialistes</p>
-						<h3>15 ANS</h3>
+						<p class="stats__label">Experiența medie a specialiștilor</p>
+						<h3>15 ANI</h3>
 					</div>
 				</div>
 				<div class="stats__card">
 					<img src="/img/adv/three.png" alt="">
 					<div class="stats__overlay"></div>
 					<div class="stats__content">
-						<p class="stats__label">Deviennent des clients réguliers</p>
-						<h3>75 % DES CLIENTS</h3>
+						<p class="stats__label">Devine partener permanent</p>
+						<h3>75% CLIENȚI</h3>
 					</div>
 				</div>
 				<div class="stats__card">
 					<img src="/img/adv/four.png" alt="">
 					<div class="stats__overlay"></div>
 					<div class="stats__content">
-						<p class="stats__label">Plus de</p>
-						<h3>45 UNITÉS D’ÉQUIPEMENT</h3>
+						<p class="stats__label">Disponibil peste</p>
+						<h3>45 UTILAJE</h3>
 					</div>
 				</div>
 				<div class="stats__card">
 					<img src="/img/adv/five.png" alt="">
 					<div class="stats__overlay"></div>
 					<div class="stats__content">
-						<p class="stats__label">Plus de</p>
-						<h3>1000 COMMANDES RÉALISÉES</h3>
+						<p class="stats__label">Peste</p>
+						<h3>1000 COMENZI FINALIZATE</h3>
 					</div>
 				</div>
 			</div>
@@ -165,7 +156,7 @@ $_SESSION['form_time'] = time();
 		<!-- Верхняя тёмная шапка -->
 		<div class="equipment__header">
 			<div class="container_eq">
-				<h2 class="equipment__heading">ÉQUIPEMENT</h2>
+				<h2 class="equipment__heading">ECHIPAMENTE</h2>
 			</div>
 		</div>
 		<!-- Голубая полоса со слайдером -->
@@ -238,16 +229,16 @@ $_SESSION['form_time'] = time();
 			<div class="container equipment__content-inner">
 				<div class="equipment__text">
 					<h3>
-						FABRICATION SELON VOS PLANS<br>
-						OU ÉCHANTILLONS
+						FABRICARE PE BAZA DESENELOR<br>
+						SAU MOSTRELOR DVS.
 					</h3>
 					<p>
-						Vous pouvez nous fournir une pièce métallique et commander la fabrication d’un duplicata.
-						Nous effectuerons toutes les mesures nécessaires, établirons le plan technique et fabriquerons la pièce requise.
+						Ne puteți furniza o piesă metalică și puteți comanda realizarea unui duplicat.
+						Efectuăm toate măsurătorile necesare, elaborăm desenul tehnic și fabricăm piesa solicitată.
 					</p>
 				</div>
 				<div class="equipment__cta">
-					<button class="btn btn-primary">CALCUL<br>DU COÛT DE LA COMMANDE</button>
+					<button class="btn btn-primary">CALCUL<br>COST COMANDĂ</button>
 				</div>
 			</div>
 		</div>
@@ -255,43 +246,43 @@ $_SESSION['form_time'] = time();
 	<!-- ================= services ================= -->
 	<section class="services services--animate reveal" id="services">
 		<div class="container">
-			<h2 class="services__title">SERVICES</h2>
+			<h2 class="services__title">SERVICII</h2>
 			<div class="services__grid">
 				<div class="service-card service-card--1">
 					<div class="service-card__bg"></div>
-					<h3>Usinage par tournage et fraisage des métaux et plastiques</h3>
-					<p>Usinage mécanique de haute précision sur des équipements modernes.</p>
-					<button class="btn btn-primary">à partir de 10 € / pièce</button>
+					<h3>Prelucrare prin strunjire și frezare a metalelor și materialelor plastice</h3>
+					<p>Prelucrare mecanică de înaltă precizie pe echipamente moderne.</p>
+					<button class="btn btn-primary">de la 10 € / buc.</button>
 				</div>
 				<div class="service-card service-card--2">
 					<div class="service-card__bg"></div>
-					<h3>Fabrication de pièces sur mesure selon plans</h3>
-					<p>Production selon vos spécifications techniques et échantillons.</p>
-					<button class="btn btn-primary">à partir de 5 € / pièce</button>
+					<h3>Fabricarea pieselor la comandă conform desenelor</h3>
+					<p>Producție pe baza documentației tehnice și a mostrelor furnizate.</p>
+					<button class="btn btn-primary">de la 5 € / buc.</button>
 				</div>
 				<div class="service-card service-card--3">
 					<div class="service-card__bg"></div>
-					<h3>Production en série et à l’unité</h3>
-					<p>Fabrication de lots de pièces de tout volume.</p>
-					<button class="btn btn-primary">à partir de 15 € / pièce</button>
+					<h3>Producție de serie și unicat</h3>
+					<p>Fabricarea loturilor de piese în orice volum.</p>
+					<button class="btn btn-primary">de la 15 € / buc.</button>
 				</div>
 				<div class="service-card service-card--4">
 					<div class="service-card__bg"></div>
-					<h3>Ingénierie et conseil technique</h3>
-					<p>Sélection de solutions optimales et сопровancement du projet.</p>
-					<button class="btn btn-primary">à partir de 12 € / pièce</button>
+					<h3>Consultanță inginerească și tehnologică</h3>
+					<p>Selectarea soluțiilor optime și suport pe parcursul proiectului.</p>
+					<button class="btn btn-primary">de la 12 € / buc.</button>
 				</div>
 				<div class="service-card service-card--5">
 					<div class="service-card__bg"></div>
-					<h3>Assemblage et opérations secondaires</h3>
-					<p>Traitement complet et préparation des produits.</p>
-					<button class="btn btn-primary">à partir de 8 € / pièce</button>
+					<h3>Operațiuni de asamblare și procese secundare</h3>
+					<p>Prelucrare complexă și pregătirea produselor finite.</p>
+					<button class="btn btn-primary">de la 8 € / buc.</button>
 				</div>
 				<div class="service-card--6">
 					<div class="service-card__bg"></div>
-					<h3>Commande personnalisée</h3>
-					<p>Développement et réalisation de projets non standard.</p>
-					<button class="btn btn-primary">Nous contacter</button>
+					<h3>Comandă personalizată</h3>
+					<p>Dezvoltarea și implementarea proiectelor нестандартe.</p>
+					<button class="btn btn-primary">Contactați-ne</button>
 				</div>
 			</div>
 		</div>
@@ -301,26 +292,26 @@ $_SESSION['form_time'] = time();
 		<div class="container">
 			<div class="work-types__grid">
 				<div class="work-types__content">
-					<h2 class="t30 fw7 mb2">Types de travaux de fraisage</h2>
-					<p class="t16 mb3">Les opérations de fraisage sont utilisées pour l’usinage de différentes surfaces et pour la réalisation d’un large éventail d’opérations :</p>
+					<h2 class="t30 fw7 mb2">Tipuri de lucrări de frezare</h2>
+					<p class="t16 mb3">Operațiunile de frezare sunt utilizate pentru prelucrarea diferitelor suprafețe și pentru realizarea unei game largi de procese:</p>
 					<ul class="work-types__list mb3">
-						<li>Usinage de surfaces planes ;</li>
-						<li>Réalisation de rainures et de gorges ;</li>
-						<li>Fabrication d’épaulements ;</li>
-						<li>Formation de surfaces profilées ;</li>
-						<li>Taraudage et filetage ;</li>
-						<li>Fabrication d’engrenages.</li>
+						<li>Prelucrarea suprafețelor plane;</li>
+						<li>Realizarea canalelor și șanțurilor;</li>
+						<li>Executarea treptelor;</li>
+						<li>Formarea suprafețelor profilate;</li>
+						<li>Filetare;</li>
+						<li>Fabricarea roților dințate.</li>
 					</ul>
-					<p class="t16 mb2">Différents types de fraises sont utilisés pour ces opérations :</p>
+					<p class="t16 mb2">Pentru aceste operațiuni se utilizează diferite tipuri de freze:</p>
 					<ol class="work-types__list work-types__list--numbered">
-						<li><strong>Cylindriques</strong> — pour l’usinage de surfaces planes ;</li>
-						<li><strong>À surfacer</strong> — pour le fraisage de plans et d’épaulements ;</li>
-						<li><strong>Disques</strong> — pour l’usinage de rainures et la coupe du métal ;</li>
-						<li><strong>En bout</strong> — type universel pour diverses opérations ;</li>
-						<li><strong>Angulaires</strong> — pour l’usinage de surfaces inclinées ;</li>
-						<li><strong>Profilées</strong> — pour la création de surfaces de forme complexe.</li>
+						<li><strong>Cilindrice</strong> — pentru prelucrarea suprafețelor plane;</li>
+						<li><strong>Frontale</strong> — pentru frezarea planurilor și treptelor;</li>
+						<li><strong>Discuri</strong> — pentru realizarea canalelor și debitarea metalului;</li>
+						<li><strong>Deget</strong> — tip universal pentru diverse operațiuni;</li>
+						<li><strong>Unghiulare</strong> — pentru prelucrarea suprafețelor înclinate;</li>
+						<li><strong>Profilate</strong> — pentru realizarea suprafețelor cu forme complexe.</li>
 					</ol>
-					<p class="t16 mb2">Le choix du type de fraise dépend directement de la nature des opérations à réaliser et de la précision d’usinage requise.</p>
+					<p class="t16 mb2">Alegerea tipului de freză depinde direct de natura lucrărilor și de precizia de prelucrare necesară.</p>
 				</div>
 				<div class="work-types__video">
 					<div class="video-wrapper">
@@ -337,10 +328,10 @@ $_SESSION['form_time'] = time();
 	<!-- ================= our projects ================= -->
 	<section class="projects ba-block reveal" id="projects">
 		<div class="container">
-			<h2 class="t30 fw7 mb3">Nos projets</h2>
+			<h2 class="t30 fw7 mb3">Proiectele noastre</h2>
 			<!-- ===== Desktop Slider ===== -->
 			<div class="projects-slider">
-				<button class="projects-arrow projects-arrow--prev" aria-label="Précédent">
+				<button class="projects-arrow projects-arrow--prev" aria-label="Înapoi">
 					<svg viewBox="0 0 24 24" width="28" height="28">
 						<path d="M15 6l-6 6 6 6" fill="none" stroke="currentColor" stroke-width="2"/>
 					</svg>
@@ -371,7 +362,7 @@ $_SESSION['form_time'] = time();
 
 					</div>
 				</div>
-				<button class="projects-arrow projects-arrow--next" aria-label="Suivant">
+				<button class="projects-arrow projects-arrow--next" aria-label="Înainte">
 					<svg viewBox="0 0 24 24" width="28" height="28">
 						<path d="M9 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2"/>
 					</svg>
@@ -394,18 +385,18 @@ $_SESSION['form_time'] = time();
 				<div class="projects-item projects-hidden"><img src="/img/projects/12.webp" alt=""></div>
 			</div>
 			<button class="projects-more-btn">
-				Tous les projets
+				Toate proiectele
 			</button>
 		</div>
 	</section>
 	<!-- ================= cta ================= -->
 	<section class="contact reveal">
 		<div class="container">
-			<h2 class="section-title contact__title">Envoyez votre projet pour devis</h2>
+			<h2 class="section-title contact__title">Trimiteți proiectul pentru ofertare</h2>
 			<form id="projectForm" class="contact-form" enctype="multipart/form-data" novalidate>
 				<div class="contact-form__content">
 					<div class="contact-form__row">
-						<input type="text" name="name" placeholder="Nom" requiredpattern="^[A-Za-zА-Яа-яЁё\s]+$">
+						<input type="text" name="name" placeholder="Nume" requiredpattern="^[A-Za-zА-Яа-яЁё\s]+$">
 						<input type="email" name="email" placeholder="Email" required>
 					</div>
 					<div class="contact-form__upload">
@@ -423,23 +414,23 @@ $_SESSION['form_time'] = time();
 								</svg>
 							</div>
 							<div class="upload-text">
-								<p class="upload-title">Ajoutez un plan</p>
-								<p class="upload-sub">Cliquez pour sélectionner un fichier</p>
+								<p class="upload-title">Adăugați desenul tehnic</p>
+								<p class="upload-sub">Faceți clic pentru a selecta fișierul</p>
 							</div>
 						</label>
 						<div class="file-list"></div>
 						<div class="warning">
-							<p class="warning-text">Vous pouvez télécharger jusqu’à 10 fichiers maximum.</p>
+							<p class="warning-text">Se pot încărca maximum 10 fișiere.</p>
 						</div>
 					</div>
-					<textarea name="message" placeholder="Indiquez le matériau, le volume, la quantité et les détails"></textarea>
+					<textarea name="message" placeholder="Descrieți materialul, volumul, cantitatea și detaliile"></textarea>
 					<div class="contact-form__captcha">
-						<label>Combien font <?php echo $a; ?> + <?php echo $b; ?> ?</label>
+						<label id="captchaLabel"></label>
 						<input type="number" name="captcha" required>
 					</div>
 					<!-- Honeypot -->
 					<input type="text" name="company" style="display:none"autocomplete="off">
-					<button type="submit">Envoyer</button>
+					<button type="submit">Trimiteți</button>
 				</div>
 				<div class="form-alert"></div>
 			</form>
@@ -452,10 +443,10 @@ $_SESSION['form_time'] = time();
 				<div class="footer-links">
 					<div class="footer-col">
 						<a class="footer-title">
-							Contacts
+							Contact
 						</a>
 						<div class="footer-sub">
-							<p class="footer-label">Adresse légale et opérationnelle</p>
+							<p class="footer-label">Adresă juridică și operațională</p>
 							<p>11073 Beograd, Jurija Gagarina str, build 231, local 329, Serbia</p>
 							<p class="footer-label">Email</p>
 							<p>
@@ -465,22 +456,22 @@ $_SESSION['form_time'] = time();
 					</div>
 					<div class="footer-col">
 						<a href="#about" class="footer-title">
-							À propos de nous
+							Despre noi
 						</a>
 					</div>
 					<div class="footer-col">
 						<a href="#equipment" class="footer-title">
-							Équipement
+							Echipamente
 						</a>
 					</div>
 					<div class="footer-col">
 						<a href="#services" class="footer-title">
-							Services
+							Servicii
 						</a>
 					</div>
 					<div class="footer-col">
 						<a href="#projects" class="footer-title">
-							Nos projets
+							Proiectele noastre
 						</a>
 					</div>
 				</div>
@@ -495,37 +486,37 @@ $_SESSION['form_time'] = time();
 		<div class="rg-modal__overlay"></div>
 		<div class="rg-modal__window" role="dialog" aria-modal="true">
 			<button class="rg-modal__close" data-modal-close></button>
-			<h3 class="rg-modal__title">Demander un devis</h3>
-			<p class="modal_desc">Envoyez les détails de votre projet et nous préparerons une estimation dans les plus brefs délais</p>
+			<h3 class="rg-modal__title">Solicită ofertă</h3>
+			<p class="modal_desc">Trimiteți detaliile proiectului, iar noi vom pregăti oferta în cel mai scurt timp</p>
 			<form id="projectFormModal" class="contact-form contact-form--modal" enctype="multipart/form-data">
 				<div class="contact-form__content-modal">
 					<div class="contact-form__row-modal">
-						<input type="text" name="name" placeholder="Nom" required pattern="^[A-Za-zА-Яа-яЁё\s]+$">
+						<input type="text" name="name" placeholder="Nume" required pattern="^[A-Za-zА-Яа-яЁё\s]+$">
 						<input type="email" name="email" placeholder="Email" required>
 					</div>
-					<textarea class="text_modal" name="message" placeholder="Décrivez brièvement votre projet"></textarea>
+					<textarea class="text_modal" name="message" placeholder="Descrieți pe scurt cerința"></textarea>
 					<div class="contact-form__upload">
 						<label class="upload-box">
 							<input type="file" name="files[]" multiple hidden accept=".zip,.jpg,.jpeg,.png,.docx,.xlsx,.pdf,.dxf,.dwg">
 							<div class="upload-icon">
-								<img src="/img/upload.svg" alt="Téléchargement de fichier" width="48" height="48">
+								<img src="/img/upload.svg" alt="Încărcare fișier" width="48" height="48">
 							</div>
 							<div class="upload-text">
-								<p class="upload-title">Ajoutez un plan</p>
-								<p class="upload-sub">Cliquez pour sélectionner un fichier</p>
+								<p class="upload-title">Adăugați desenul tehnic</p>
+								<p class="upload-sub">Faceți clic pentru a selecta fișierul</p>
 							</div>
 						</label>
 						<div class="file-list"></div>
 						<div class="warning">
-							<p class="warning-text">Vous pouvez télécharger jusqu’à 10 fichiers maximum.</p>
+							<p class="warning-text">Se pot încărca maximum 10 fișiere.</p>
 						</div>
 					</div>
 					<div class="contact-form__captcha-modal">
-						<label>Combien font <?php echo $a; ?> + <?php echo $b; ?> ?</label>
+						<label id="captchaLabel"></label>
 						<input type="number" name="captcha" required>
 					</div>
 					<input type="text" name="company" style="display:none" autocomplete="off">
-					<button class="modal_submit_btn" type="submit">Envoyer</button>
+					<button class="modal_submit_btn" type="submit">Trimiteți</button>
 				</div>
 				<div class="form-alert-modal"></div>
 			</form>
@@ -540,12 +531,12 @@ $_SESSION['form_time'] = time();
 
 		const modalContent = {
 			default: {
-				title: 'Demander un devis',
-				desc: 'Envoyez les détails de votre projet et nous préparerons une estimation dans les plus brefs délais'
+				title: 'Solicită ofertă',
+				desc: 'Trimiteți detaliile proiectului, iar noi vom pregăti oferta în cel mai scurt timp'
 			},
 			auto: {
-				title: 'Des questions ?',
-				desc: 'Laissez une demande et nous vous fournirons une consultation gratuite'
+				title: 'Aveți întrebări?',
+				desc: 'Lăsați o solicitare, iar noi vă vom oferi consultanță gratuită'
 			}
 		};
 
@@ -662,7 +653,7 @@ $_SESSION['form_time'] = time();
 	</script>
 	<script src="/js/language-switcher.js"></script>
 	<script src="/js/main.js"></script>
-	<script src="/js/fr/modal.js"></script>
-	<script src="/js/fr/form.js"></script>
+	<script src="/js/ro/modal.js"></script>
+	<script src="/js/ro/form.js"></script>
 </body>
 </html>

@@ -1,12 +1,3 @@
-<?php
-session_start();
-
-$a = rand(1, 9);
-$b = rand(1, 9);
-$_SESSION['captcha_answer'] = $a + $b;
-
-$_SESSION['form_time'] = time();
-?>
 <html lang="pl">
 <head>
 	<meta charset="UTF-8">
@@ -434,7 +425,7 @@ $_SESSION['form_time'] = time();
 					</div>
 					<textarea name="message" placeholder="Opisz materiał, zakres, ilość oraz szczegóły"></textarea>
 					<div class="contact-form__captcha">
-						<label>Ile wynosi <?php echo $a; ?> + <?php echo $b; ?>?</label>
+						<label id="captchaLabel"></label>
 						<input type="number" name="captcha" required>
 					</div>
 					<!-- Honeypot -->
@@ -521,7 +512,7 @@ $_SESSION['form_time'] = time();
 						</div>
 					</div>
 					<div class="contact-form__captcha-modal">
-						<label>Ile wynosi <?php echo $a; ?> + <?php echo $b; ?>?</label>
+						<label id="captchaLabel"></label>
 						<input type="number" name="captcha" required>
 					</div>
 					<input type="text" name="company" style="display:none" autocomplete="off">

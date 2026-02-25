@@ -21,6 +21,19 @@ document.addEventListener("DOMContentLoaded", function () {
 	const maxFileSize = 20 * 1024 * 1024;
 	const maxFiles = 10;
 
+    // ================= captcha =================
+
+	function loadCaptcha() {
+		return fetch('/php/captcha.php')
+			.then(response => response.json())
+			.then(data => {
+				const label = document.getElementById('captchaLabel');
+				label.textContent = `CAPTCHA: ${data.a} + ${data.b}?`;
+			});
+	}
+
+	loadCaptcha();
+
     // ================= File Handling =================
 
     const fileList = form.querySelector(".file-list");
@@ -202,7 +215,9 @@ document.addEventListener("DOMContentLoaded", function () {
 			submitBtn.classList.remove("is-loading");
 
 			if (result.success) {
-				showSuccess("Su solicitud ha sido enviada con éxito. Nos pondremos en contacto con usted en breve.");// <----------------------------
+				showSuccess("Su solicitud ha sido enviada con éxito. Nos pondremos en contacto con usted en breve.");// <-------------------
+				form.reset();
+				loadCaptcha();
 			} else {
 				showError(result.message || "Error de envío.");// <------------------------------------------------------------
 			}

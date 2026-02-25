@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", function () {
 			.then(response => response.json())
 			.then(data => {
 				const label = document.getElementById('captchaLabel');
-				label.textContent = `Captcha: ${data.a} + ${data.b}?`;
+				label.textContent = `CAPTCHA: ${data.a} + ${data.b}?`;
 			});
 	}
 

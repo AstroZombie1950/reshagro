@@ -1,25 +1,16 @@
-<?php
-session_start();
-
-$a = rand(1, 9);
-$b = rand(1, 9);
-$_SESSION['captcha_answer'] = $a + $b;
-
-$_SESSION['form_time'] = time();
-?>
-<html lang="de">
+<html lang="sr">
 <head>
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>CNC-Drehen & Fräsen nach Zeichnung | Präzisionsfertigung | Reshagro Engineering Center</title>
-	<meta name="description" content="CNC-Drehen und CNC-Fräsen von Metall- und Kunststoffteilen nach technischer Zeichnung. Einzel- und Serienfertigung, Prototypenbau sowie technische Beratung. Europaweite Zusammenarbeit.">
-	<meta name="keywords" content="CNC Drehen, CNC Fräsen, Lohnfertigung Metall, Präzisionsteile, Zerspanungstechnik, CNC Bearbeitung, Prototypenfertigung, Serienfertigung">
+	<title>CNC Tokarenje i Glodanje po Crtežu | Proizvodnja Mašinskih Delova | Reshagro Engineering Center</title>
+	<meta name="description" content="CNC tokarenje i glodanje metalnih i plastičnih delova prema tehničkoj dokumentaciji. Prototipovi i serijska proizvodnja, inženjerska podrška. Saradnja širom Evrope.">
+	<meta name="keywords" content="CNC tokarenje, CNC glodanje, mašinska obrada, proizvodnja metalnih delova, precizna obrada, serijska proizvodnja, industrijski podizvođač">
 	<meta name="author" content="Reshagro Engineering Center">
 	<meta name="robots" content="index, follow">
 	<meta name="theme-color" content="#0e5fa8">
 	<!-- Canonical -->
-	<link rel="canonical" href="https://reshagro.com/de/">
+	<link rel="canonical" href="https://reshagro.com/sr/">
 	<!-- Hreflang -->
 	<link rel="alternate" hreflang="ru" href="https://reshagro.com/ru/">
 	<link rel="alternate" hreflang="de" href="https://reshagro.com/de/">
@@ -32,15 +23,15 @@ $_SESSION['form_time'] = time();
 	<link rel="alternate" hreflang="x-default" href="https://reshagro.com/">
 	<!-- Open Graph -->
 	<meta property="og:type" content="website">
-	<meta property="og:title" content="CNC-Drehen & Fräsen | Reshagro">
-	<meta property="og:description" content="Präzise CNC-Bearbeitung von Metall- und Kunststoffteilen nach Zeichnung. Einzel- und Serienfertigung.">
-	<meta property="og:url" content="https://reshagro.com/de/">
+	<meta property="og:title" content="CNC Tokarenje i Glodanje | Reshagro">
+	<meta property="og:description" content="Visokoprecizna CNC obrada prema tehničkoj dokumentaciji. Prototipovi i serijska proizvodnja.">
+	<meta property="og:url" content="https://reshagro.com/sr/">
 	<meta property="og:image" content="https://reshagro.com/img/logo_ogimg.png">
-	<meta property="og:locale" content="de_DE">
+	<meta property="og:locale" content="sr_RS">
 	<!-- Twitter Card -->
 	<meta name="twitter:card" content="summary_large_image">
-	<meta name="twitter:title" content="CNC-Drehen & Fräsen | Reshagro">
-	<meta name="twitter:description" content="Hochpräzise CNC-Bearbeitung nach technischer Zeichnung.">
+	<meta name="twitter:title" content="CNC Tokarenje i Glodanje | Reshagro">
+	<meta name="twitter:description" content="Precizna CNC obrada metalnih i plastičnih delova.">
 	<meta name="twitter:image" content="https://reshagro.com/img/logo_ogimg.png">
 	<!-- Favicon -->
 	<link rel="icon" href="/favicon.ico" type="image/x-icon">
@@ -65,11 +56,11 @@ $_SESSION['form_time'] = time();
 					>
 				</a>
 				<nav class="nav" id="nav">
-					<a href="#about" class="nav__link">Über uns</a>
-					<a href="#equipment" class="nav__link">Maschinenpark</a>
-					<a href="#services" class="nav__link">Leistungen</a>
-					<a href="#projects" class="nav__link">Unsere Projekte</a>
-					<button class="btn btn-primary btn-nav" id="openModal">Angebot anfordern</button>
+					<a href="#about" class="nav__link">O nama</a>
+					<a href="#equipment" class="nav__link">Oprema</a>
+					<a href="#services" class="nav__link">Usluge</a>
+					<a href="#projects" class="nav__link">Naši projekti</a>
+					<button class="btn btn-primary btn-nav" id="openModal">Zatražite ponudu</button>
 				</nav>
 				<div class="header__actions">
 					<div class="lang-switcher" data-lang-switcher>
@@ -98,7 +89,7 @@ $_SESSION['form_time'] = time();
 						<span></span>
 					</div>
 				</div>
-				<button class="btn btn-primary btn-head" id="openModal">Angebot anfordern</button>
+				<button class="btn btn-primary btn-head" id="openModal">Zatražite ponudu</button>
 			</div>
 		</div>
 	</header>
@@ -107,9 +98,9 @@ $_SESSION['form_time'] = time();
 		<div class="hero__overlay"></div>
 		<div class="container">
 			<div class="hero__content hero__content--animate">
-				<h1 class="hero__title">Dreh- und Fräsbearbeitung von Metall nach Kundenanforderung</h1>
+				<h1 class="hero__title">Tokarska i glodačka obrada metala po narudžbini</h1>
 				<div class="hero__underline"></div>
-				<p class="hero__text">Reshagro bietet seinen Kunden CNC-Fräsbearbeitung von Metall nach individuellen Anforderungen.<br>An unseren Produktionsstandorten stehen sowohl konventionelle als auch CNC-gesteuerte Fräsmaschinen zur Verfügung. Es werden horizontale und vertikale Fräsarbeiten mit einer Genauigkeit bis IT6 durchgeführt. Wir verarbeiten Baustähle, Nichteisenmetalle sowie Edelstahl. Hochpräzise mechanische Bearbeitung von Bauteilen nach technischen Zeichnungen. Serien- und Einzelfertigung für Industrieunternehmen und Privatkunden.</p>
+				<p class="hero__text">Kompanija Reshagro svojim klijentima nudi uslugu — glodačku obradu metala po narudžbini<br>Na našim proizvodnim lokacijama raspolažemo univerzalnim mašinama i CNC obradnim centrima za glodanje. Izvodimo horizontalno i vertikalno glodanje sa preciznošću do 6. kvaliteta. Radimo sa čeličnim, obojenim i nerđajućim metalima. Visokoprecizna mehanička obrada delova prema tehničkim crtežima. Serijska i pojedinačna proizvodnja za preduzeća i privatne klijente.</p>
 			</div>
 		</div>
 	</section>
@@ -121,40 +112,40 @@ $_SESSION['form_time'] = time();
 					<img src="/img/adv/one.png" alt="">
 					<div class="stats__overlay"></div>
 					<div class="stats__content">
-						<p class="stats__label">Am Markt seit</p>
-						<h3>2018</h3>
+						<p class="stats__label">Poslujemo od</p>
+						<h3>2018. GODINE</h3>
 					</div>
 				</div>
 				<div class="stats__card">
 					<img src="/img/adv/two.png" alt="">
 					<div class="stats__overlay"></div>
 					<div class="stats__content">
-						<p class="stats__label">Durchschnittliche Berufserfahrung</p>
-						<h3>15 JAHRE</h3>
+						<p class="stats__label">Prosečno iskustvo stručnjaka</p>
+						<h3>15 GODINA</h3>
 					</div>
 				</div>
 				<div class="stats__card">
 					<img src="/img/adv/three.png" alt="">
 					<div class="stats__overlay"></div>
 					<div class="stats__content">
-						<p class="stats__label">Werden Stammkunden</p>
-						<h3>75% DER KUNDEN</h3>
+						<p class="stats__label">Postaju stalni</p>
+						<h3>75% KLIJENATA</h3>
 					</div>
 				</div>
 				<div class="stats__card">
 					<img src="/img/adv/four.png" alt="">
 					<div class="stats__overlay"></div>
 					<div class="stats__content">
-						<p class="stats__label">Mehr als</p>
-						<h3>45 MASCHINEN</h3>
+						<p class="stats__label">Raspolažemo sa više od</p>
+						<h3>45 JED. OPREME</h3>
 					</div>
 				</div>
 				<div class="stats__card">
 					<img src="/img/adv/five.png" alt="">
 					<div class="stats__overlay"></div>
 					<div class="stats__content">
-						<p class="stats__label">Mehr als</p>
-						<h3>1000 AUFTRÄGE REALISIERT</h3>
+						<p class="stats__label">Realizovano više od</p>
+						<h3>1000 PORUDŽBINA</h3>
 					</div>
 				</div>
 			</div>
@@ -165,7 +156,7 @@ $_SESSION['form_time'] = time();
 		<!-- Верхняя тёмная шапка -->
 		<div class="equipment__header">
 			<div class="container_eq">
-				<h2 class="equipment__heading">MASCHINENPARK</h2>
+				<h2 class="equipment__heading">OPREMA</h2>
 			</div>
 		</div>
 		<!-- Голубая полоса со слайдером -->
@@ -238,16 +229,16 @@ $_SESSION['form_time'] = time();
 			<div class="container equipment__content-inner">
 				<div class="equipment__text">
 					<h3>
-						FERTIGUNG NACH IHREN ZEICHNUNGEN<br>
-						ODER MUSTERN
+						IZRADA PREMA VAŠIM TEHNIČKIM CRTEŽIMA<br>
+						ILI UZORCIMA
 					</h3>
 					<p>
-						Sie können uns ein Metallbauteil zur Verfügung stellen und die Anfertigung eines Duplikats beauftragen.
-						Wir führen alle erforderlichen Messungen durch, erstellen eine technische Zeichnung und fertigen das benötigte Bauteil.
+						Možete nam dostaviti metalni deo i naručiti izradu duplikata.
+						Izvršićemo sva potrebna merenja, izraditi tehnički crtež i proizvesti traženi deo.
 					</p>
 				</div>
 				<div class="equipment__cta">
-					<button class="btn btn-primary">KOSTEN<br>ANFRAGEN</button>
+					<button class="btn btn-primary">Zatražite<br>PONUDU</button>
 				</div>
 			</div>
 		</div>
@@ -255,43 +246,43 @@ $_SESSION['form_time'] = time();
 	<!-- ================= services ================= -->
 	<section class="services services--animate reveal" id="services">
 		<div class="container">
-			<h2 class="services__title">LEISTUNGEN</h2>
+			<h2 class="services__title">USLUGE</h2>
 			<div class="services__grid">
 				<div class="service-card service-card--1">
 					<div class="service-card__bg"></div>
-					<h3>Dreh- und Fräsbearbeitung von Metallen und Kunststoffen</h3>
-					<p>Hochpräzise mechanische Bearbeitung auf modernen Maschinen.</p>
-					<button class="btn btn-primary">ab 10 € pro Stk.</button>
+					<h3>Tokarska i glodačka obrada metala i plastike</h3>
+					<p>Visokoprecizna mehanička obrada na savremenoj opremi.</p>
+					<button class="btn btn-primary">od 10 € po kom.</button>
 				</div>
 				<div class="service-card service-card--2">
 					<div class="service-card__bg"></div>
-					<h3>Fertigung von Bauteilen nach Zeichnung</h3>
-					<p>Produktion gemäß Ihren technischen Vorgaben und Mustern.</p>
-					<button class="btn btn-primary">ab 5 € pro Stk.</button>
+					<h3>Izrada delova po narudžbini prema tehničkim crtežima</h3>
+					<p>Proizvodnja prema vašoj tehničkoj dokumentaciji i uzorcima.</p>
+					<button class="btn btn-primary">od 5 € po kom.</button>
 				</div>
 				<div class="service-card service-card--3">
 					<div class="service-card__bg"></div>
-					<h3>Serien- und Einzelfertigung</h3>
-					<p>Herstellung von Bauteilserien in beliebiger Stückzahl.</p>
-					<button class="btn btn-primary">ab 15 € pro Stk.</button>
+					<h3>Serijska i pojedinačna proizvodnja</h3>
+					<p>Izrada serija delova svih obima.</p>
+					<button class="btn btn-primary">od 15 € po kom.</button>
 				</div>
 				<div class="service-card service-card--4">
 					<div class="service-card__bg"></div>
-					<h3>Engineering- und technische Beratung</h3>
-					<p>Auswahl optimaler Lösungen und projektbegleitende Unterstützung.</p>
-					<button class="btn btn-primary">ab 12 € pro Stk.</button>
+					<h3>Inženjerske i tehnološke konsultacije</h3>
+					<p>Izbor optimalnih rešenja i stručna podrška tokom realizacije projekta.</p>
+					<button class="btn btn-primary">od 12 € po kom.</button>
 				</div>
 				<div class="service-card service-card--5">
 					<div class="service-card__bg"></div>
-					<h3>Montage- und Sekundäroperationen</h3>
-					<p>Umfassende Weiterverarbeitung und Vorbereitung von Baugruppen.</p>
-					<button class="btn btn-primary">ab 8 € pro Stk.</button>
+					<h3>Montažne i sekundarne operacije</h3>
+					<p>Kompleksna obrada i priprema proizvoda.</p>
+					<button class="btn btn-primary">od 8 € po kom.</button>
 				</div>
 				<div class="service-card--6">
 					<div class="service-card__bg"></div>
-					<h3>Individuelle Anfrage</h3>
-					<p>Entwicklung und Umsetzung kundenspezifischer Lösungen.</p>
-					<button class="btn btn-primary">Kontakt aufnehmen</button>
+					<h3>Individualna porudžbina</h3>
+					<p>Razvoj i realizacija nestandardnih zadataka.</p>
+					<button class="btn btn-primary">Kontaktirajte nas</button>
 				</div>
 			</div>
 		</div>
@@ -301,26 +292,26 @@ $_SESSION['form_time'] = time();
 		<div class="container">
 			<div class="work-types__grid">
 				<div class="work-types__content">
-					<h2 class="t30 fw7 mb2">Arten von Fräsarbeiten</h2>
-					<p class="t16 mb3">Fräsarbeiten werden zur Bearbeitung verschiedener Oberflächen und zur Durchführung eines breiten Spektrums an Operationen eingesetzt:</p>
+					<h2 class="t30 fw7 mb2">Vrste glodačkih radova</h2>
+					<p class="t16 mb3">Glodački radovi se koriste za obradu različitih površina i izvođenje širokog spektra operacija:</p>
 					<ul class="work-types__list mb3">
-						<li>Bearbeitung ebener Flächen;</li>
-						<li>Herstellung von Nuten und Schlitzen;</li>
-						<li>Fertigung von Absätzen;</li>
-						<li>Formgebung profilierter Oberflächen;</li>
-						<li>Gewindeschneiden;</li>
-						<li>Herstellung von Zahnrädern.</li>
+						<li>Obrada ravnih površina;</li>
+						<li>Izrada žlebova i kanala;</li>
+						<li>Izrada stepenica i ramena;</li>
+						<li>Formiranje profilisanih površina;</li>
+						<li>Narezivanje navoja;</li>
+						<li>Izrada zupčanika.</li>
 					</ul>
-					<p class="t16 mb2">Für diese Arbeiten kommen unterschiedliche Fräswerkzeuge zum Einsatz:</p>
+					<p class="t16 mb2">Za izvođenje ovih operacija koriste se različite vrste glodala:</p>
 					<ol class="work-types__list work-types__list--numbered">
-						<li><strong>Zylinderfräser</strong> — zur Bearbeitung ebener Flächen;</li>
-						<li><strong>Planfräser</strong> — zum Fräsen von Ebenen und Absätzen;</li>
-						<li><strong>Scheibenfräser</strong> — zum Nutenfräsen und Trennen von Metall;</li>
-						<li><strong>Schaftfräser</strong> — universell einsetzbar für verschiedene Operationen;</li>
-						<li><strong>Winkel­fräser</strong> — zur Bearbeitung geneigter Flächen;</li>
-						<li><strong>Formfräser</strong> — zur Herstellung komplexer Profilformen.</li>
+						<li><strong>Cilindrična</strong> — za obradu ravnih površina;</li>
+						<li><strong>Čeona</strong> — za glodanje ravni i stepenica;</li>
+						<li><strong>Diskasta</strong> — za izradu žlebova i sečenje metala;</li>
+						<li><strong>Krajnja</strong> — univerzalni tip za različite operacije;</li>
+						<li><strong>Ugaona</strong> — za obradu kosih površina;</li>
+						<li><strong>Profilna</strong> — za izradu složenih oblika.</li>
 					</ol>
-					<p class="t16 mb2">Die Wahl des Fräswerkzeugs hängt direkt von der Art der Bearbeitung und der geforderten Präzision ab.</p>
+					<p class="t16 mb2">Izbor tipa glodala direktno zavisi od karaktera operacije i zahtevanog nivoa preciznosti obrade.</p>
 				</div>
 				<div class="work-types__video">
 					<div class="video-wrapper">
@@ -337,10 +328,10 @@ $_SESSION['form_time'] = time();
 	<!-- ================= our projects ================= -->
 	<section class="projects ba-block reveal" id="projects">
 		<div class="container">
-			<h2 class="t30 fw7 mb3">Unsere Projekte</h2>
+			<h2 class="t30 fw7 mb3">Naši projekti</h2>
 			<!-- ===== Desktop Slider ===== -->
 			<div class="projects-slider">
-				<button class="projects-arrow projects-arrow--prev" aria-label="Zurück">
+				<button class="projects-arrow projects-arrow--prev" aria-label="Nazad">
 					<svg viewBox="0 0 24 24" width="28" height="28">
 						<path d="M15 6l-6 6 6 6" fill="none" stroke="currentColor" stroke-width="2"/>
 					</svg>
@@ -371,7 +362,7 @@ $_SESSION['form_time'] = time();
 
 					</div>
 				</div>
-				<button class="projects-arrow projects-arrow--next" aria-label="Weiter">
+				<button class="projects-arrow projects-arrow--next" aria-label="Napred">
 					<svg viewBox="0 0 24 24" width="28" height="28">
 						<path d="M9 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2"/>
 					</svg>
@@ -394,19 +385,19 @@ $_SESSION['form_time'] = time();
 				<div class="projects-item projects-hidden"><img src="/img/projects/12.webp" alt=""></div>
 			</div>
 			<button class="projects-more-btn">
-				Alle Projekte
+				Svi projekti
 			</button>
 		</div>
 	</section>
 	<!-- ================= cta ================= -->
 	<section class="contact reveal">
 		<div class="container">
-			<h2 class="section-title contact__title">Projekt zur Kalkulation senden</h2>
+			<h2 class="section-title contact__title">Pošaljite projekat za obračun</h2>
 			<form id="projectForm" class="contact-form" enctype="multipart/form-data" novalidate>
 				<div class="contact-form__content">
 					<div class="contact-form__row">
-						<input type="text" name="name" placeholder="Name" requiredpattern="^[A-Za-zА-Яа-яЁё\s]+$">
-						<input type="email" name="email" placeholder="E-Mail" required>
+						<input type="text" name="name" placeholder="Ime" requiredpattern="^[A-Za-zА-Яа-яЁё\s]+$">
+						<input type="email" name="email" placeholder="Email" required>
 					</div>
 					<div class="contact-form__upload">
 						<label class="upload-box">
@@ -423,23 +414,23 @@ $_SESSION['form_time'] = time();
 								</svg>
 							</div>
 							<div class="upload-text">
-								<p class="upload-title">Technische Zeichnung hinzufügen</p>
-								<p class="upload-sub">Klicken Sie hier, um eine Datei auszuwählen</p>
+								<p class="upload-title">Dodajte tehnički crtež</p>
+								<p class="upload-sub">Kliknite da izaberete fajl</p>
 							</div>
 						</label>
 						<div class="file-list"></div>
 						<div class="warning">
-							<p class="warning-text">Es können maximal 10 Dateien hochgeladen werden.</p>
+							<p class="warning-text">Možete otpremiti najviše 10 fajlova.</p>
 						</div>
 					</div>
-					<textarea name="message" placeholder="Beschreiben Sie Material, Umfang, Stückzahl und Details"></textarea>
+					<textarea name="message" placeholder="Opišite materijal, obim, količinu i tehničke zahteve"></textarea>
 					<div class="contact-form__captcha">
-						<label>Wie viel ist <?php echo $a; ?> + <?php echo $b; ?>?</label>
+						<label id="captchaLabel"></label>
 						<input type="number" name="captcha" required>
 					</div>
 					<!-- Honeypot -->
 					<input type="text" name="company" style="display:none"autocomplete="off">
-					<button type="submit">Senden</button>
+					<button type="submit">Pošaljite</button>
 				</div>
 				<div class="form-alert"></div>
 			</form>
@@ -455,9 +446,9 @@ $_SESSION['form_time'] = time();
 							Kontakt
 						</a>
 						<div class="footer-sub">
-							<p class="footer-label">Rechtliche und tatsächliche Adresse</p>
+							<p class="footer-label">Pravna i poslovna adresa</p>
 							<p>11073 Beograd, Jurija Gagarina str, build 231, local 329, Serbia</p>
-							<p class="footer-label">E-Mail</p>
+							<p class="footer-label">Email</p>
 							<p>
 								<a href="mailto:info@reshagro.com">contact@reshagro.com</a>
 							</p>
@@ -465,22 +456,22 @@ $_SESSION['form_time'] = time();
 					</div>
 					<div class="footer-col">
 						<a href="#about" class="footer-title">
-							Über uns
+							O nama
 						</a>
 					</div>
 					<div class="footer-col">
 						<a href="#equipment" class="footer-title">
-							Maschinenpark
+							Oprema
 						</a>
 					</div>
 					<div class="footer-col">
 						<a href="#services" class="footer-title">
-							Leistungen
+							Usluge
 						</a>
 					</div>
 					<div class="footer-col">
 						<a href="#projects" class="footer-title">
-							Unsere Projekte
+							Naši projekti
 						</a>
 					</div>
 				</div>
@@ -495,37 +486,37 @@ $_SESSION['form_time'] = time();
 		<div class="rg-modal__overlay"></div>
 		<div class="rg-modal__window" role="dialog" aria-modal="true">
 			<button class="rg-modal__close" data-modal-close></button>
-			<h3 class="rg-modal__title">Angebot anfordern</h3>
-			<p class="modal_desc">Senden Sie uns die Details Ihrer Anfrage, und wir erstellen kurzfristig ein individuelles Angebot</p>
+			<h3 class="rg-modal__title">Zatražite ponudu</h3>
+			<p class="modal_desc">Pošaljite detalje projekta i pripremićemo ponudu u najkraćem roku</p>
 			<form id="projectFormModal" class="contact-form contact-form--modal" enctype="multipart/form-data">
 				<div class="contact-form__content-modal">
 					<div class="contact-form__row-modal">
-						<input type="text" name="name" placeholder="Name" required pattern="^[A-Za-zА-Яа-яЁё\s]+$">
-						<input type="email" name="email" placeholder="E-Mail" required>
+						<input type="text" name="name" placeholder="Ime" required pattern="^[A-Za-zА-Яа-яЁё\s]+$">
+						<input type="email" name="email" placeholder="Email" required>
 					</div>
-					<textarea class="text_modal" name="message" placeholder="Beschreiben Sie Ihre Anfrage kurz"></textarea>
+					<textarea class="text_modal" name="message" placeholder="Ukratko opišite zadatak"></textarea>
 					<div class="contact-form__upload">
 						<label class="upload-box">
 							<input type="file" name="files[]" multiple hidden accept=".zip,.jpg,.jpeg,.png,.docx,.xlsx,.pdf,.dxf,.dwg">
 							<div class="upload-icon">
-								<img src="/img/upload.svg" alt="Datei hochladen" width="48" height="48">
+								<img src="/img/upload.svg" alt="Otpremanje fajla" width="48" height="48">
 							</div>
 							<div class="upload-text">
-								<p class="upload-title">Technische Zeichnung hinzufügen</p>
-								<p class="upload-sub">Klicken Sie hier, um eine Datei auszuwählen</p>
+								<p class="upload-title">Dodajte tehnički crtež</p>
+								<p class="upload-sub">Kliknite da izaberete fajl</p>
 							</div>
 						</label>
 						<div class="file-list"></div>
 						<div class="warning">
-							<p class="warning-text">Es können maximal 10 Dateien hochgeladen werden.</p>
+							<p class="warning-text">Možete otpremiti najviše 10 fajlova.</p>
 						</div>
 					</div>
 					<div class="contact-form__captcha-modal">
-						<label>Wie viel ist <?php echo $a; ?> + <?php echo $b; ?>?</label>
+						<label id="captchaLabel"></label>
 						<input type="number" name="captcha" required>
 					</div>
 					<input type="text" name="company" style="display:none" autocomplete="off">
-					<button class="modal_submit_btn" type="submit">Senden</button>
+					<button class="modal_submit_btn" type="submit">Pošaljite</button>
 				</div>
 				<div class="form-alert-modal"></div>
 			</form>
@@ -540,12 +531,12 @@ $_SESSION['form_time'] = time();
 
 		const modalContent = {
 			default: {
-				title: 'Angebot anfordern',
-				desc: 'Senden Sie uns die Details Ihrer Anfrage, und wir erstellen kurzfristig ein individuelles Angebot'
+				title: 'Zatražite ponudu',
+				desc: 'Pošaljite detalje projekta i pripremićemo ponudu u najkraćem roku'
 			},
 			auto: {
-				title: 'Haben Sie noch Fragen?',
-				desc: 'Senden Sie uns eine Anfrage, und wir beraten Sie kostenlos'
+				title: 'Imate dodatna pitanja?',
+				desc: 'Ostavite upit i pružićemo vam besplatne konsultacije'
 			}
 		};
 
@@ -662,7 +653,7 @@ $_SESSION['form_time'] = time();
 	</script>
 	<script src="/js/language-switcher.js"></script>
 	<script src="/js/main.js"></script>
-	<script src="/js/de/modal.js"></script>
-	<script src="/js/de/form.js"></script>
+	<script src="/js/sr/modal.js"></script>
+	<script src="/js/sr/form.js"></script>
 </body>
 </html>

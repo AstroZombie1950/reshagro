@@ -1,25 +1,16 @@
-<?php
-session_start();
-
-$a = rand(1, 9);
-$b = rand(1, 9);
-$_SESSION['captcha_answer'] = $a + $b;
-
-$_SESSION['form_time'] = time();
-?>
-<html lang="es">
+<html lang="fr">
 <head>
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Torneado y Fresado CNC a Medida | Fabricación de Piezas Mecánicas | Reshagro Engineering Center</title>
-	<meta name="description" content="Servicios de torneado y fresado CNC para piezas de metal y plástico. Fabricación según planos técnicos, producción unitaria y en serie, soporte de ingeniería. Trabajamos en toda Europa.">
-	<meta name="keywords" content="torneado CNC, fresado CNC, mecanizado de precisión, fabricación de piezas metálicas, mecanizado por encargo, producción en serie, prototipos industriales">
+	<title>Tournage & Fraisage CNC sur mesure | Fabrication de pièces mécaniques | Reshagro Engineering Center</title>
+	<meta name="description" content="Services de tournage et fraisage CNC pour pièces en métal et plastique. Fabrication selon plans techniques, production unitaire et en série, accompagnement technique. Intervention dans toute l'Europe.">
+	<meta name="keywords" content="tournage CNC, fraisage CNC, usinage de précision, fabrication de pièces mécaniques, sous-traitance industrielle, production en série, prototype industriel">
 	<meta name="author" content="Reshagro Engineering Center">
 	<meta name="robots" content="index, follow">
 	<meta name="theme-color" content="#0e5fa8">
 	<!-- Canonical -->
-	<link rel="canonical" href="https://reshagro.com/es/">
+	<link rel="canonical" href="https://reshagro.com/fr/">
 	<!-- Hreflang -->
 	<link rel="alternate" hreflang="ru" href="https://reshagro.com/ru/">
 	<link rel="alternate" hreflang="de" href="https://reshagro.com/de/">
@@ -32,15 +23,15 @@ $_SESSION['form_time'] = time();
 	<link rel="alternate" hreflang="x-default" href="https://reshagro.com/">
 	<!-- Open Graph -->
 	<meta property="og:type" content="website">
-	<meta property="og:title" content="Torneado y Fresado CNC | Reshagro">
-	<meta property="og:description" content="Mecanizado CNC de alta precisión según planos técnicos. Producción unitaria y en serie.">
-	<meta property="og:url" content="https://reshagro.com/es/">
+	<meta property="og:title" content="Tournage & Fraisage CNC | Reshagro">
+	<meta property="og:description" content="Usinage CNC de haute précision pour pièces mécaniques selon plans. Production unitaire et en série.">
+	<meta property="og:url" content="https://reshagro.com/fr/">
 	<meta property="og:image" content="https://reshagro.com/img/logo_ogimg.png">
-	<meta property="og:locale" content="es_ES">
+	<meta property="og:locale" content="fr_FR">
 	<!-- Twitter Card -->
 	<meta name="twitter:card" content="summary_large_image">
-	<meta name="twitter:title" content="Torneado y Fresado CNC | Reshagro">
-	<meta name="twitter:description" content="Servicios de mecanizado CNC de precisión para piezas metálicas y plásticas.">
+	<meta name="twitter:title" content="Tournage & Fraisage CNC | Reshagro">
+	<meta name="twitter:description" content="Usinage CNC de précision pour pièces métalliques et plastiques.">
 	<meta name="twitter:image" content="https://reshagro.com/img/logo_ogimg.png">
 	<!-- Favicon -->
 	<link rel="icon" href="/favicon.ico" type="image/x-icon">
@@ -65,17 +56,17 @@ $_SESSION['form_time'] = time();
 					>
 				</a>
 				<nav class="nav" id="nav">
-					<a href="#about" class="nav__link">Sobre nosotros</a>
-					<a href="#equipment" class="nav__link">Equipos</a>
-					<a href="#services" class="nav__link">Servicios</a>
-					<a href="#projects" class="nav__link">Nuestros proyectos</a>
-					<button class="btn btn-primary btn-nav" id="openModal">Solicitar presupuesto</button>
+					<a href="#about" class="nav__link">À propos de nous</a>
+					<a href="#equipment" class="nav__link">Équipement</a>
+					<a href="#services" class="nav__link">Services</a>
+					<a href="#projects" class="nav__link">Nos projets</a>
+					<button class="btn btn-primary btn-nav" id="openModal">Demander un devis</button>
 				</nav>
 				<div class="header__actions">
 					<div class="lang-switcher" data-lang-switcher>
 						<button class="lang-switcher__toggle" type="button" aria-expanded="false">
-							<img class="lang-flag" src="/img/flags/ru.png" alt="RU" width="10" height="10">
-							<span class="lang-code">RU</span>
+							<img class="lang-flag" src="/img/flags/fr.png" alt="FR" width="10" height="10">
+							<span class="lang-code">FR</span>
 							<svg class="lang-arrow" viewBox="0 0 24 24">
 								<path d="M7 10l5 5 5-5" fill="none" stroke="currentColor" stroke-width="2"/>
 							</svg>
@@ -98,7 +89,7 @@ $_SESSION['form_time'] = time();
 						<span></span>
 					</div>
 				</div>
-				<button class="btn btn-primary btn-head" id="openModal">Solicitar presupuesto</button>
+				<button class="btn btn-primary btn-head" id="openModal">Demander un devis</button>
 			</div>
 		</div>
 	</header>
@@ -107,9 +98,9 @@ $_SESSION['form_time'] = time();
 		<div class="hero__overlay"></div>
 		<div class="container">
 			<div class="hero__content hero__content--animate">
-				<h1 class="hero__title">Mecanizado de torneado y fresado de metal a medida</h1>
+				<h1 class="hero__title">Usinage de pièces métalliques par tournage et fraisage sur mesure</h1>
 				<div class="hero__underline"></div>
-				<p class="hero__text">Reshagro ofrece a sus clientes el servicio de fresado de metal a medida<br>En nuestras instalaciones de producción contamos con máquinas convencionales y centros CNC para operaciones de fresado. Realizamos fresado horizontal y vertical con precisión hasta calidad IT6. Trabajamos con aceros al carbono, metales no ferrosos y acero inoxidable. Mecanizado de alta precisión de piezas según planos técnicos. Producción en serie y fabricación de piezas unitarias para empresas y clientes particulares.</p>
+				<p class="hero__text">Reshagro propose à ses clients des services de fraisage de métaux sur mesure.<br>Nos sites de production sont équipés de machines universelles et de centres d’usinage CNC dédiés au fraisage. Nous réalisons des opérations de fraisage horizontal et vertical avec une précision jusqu’au grade IT6. Notre entreprise travaille les aciers carbone, les métaux non ferreux et les aciers inoxydables. Usinage mécanique de haute précision de pièces selon plans techniques. Production en série et à l’unité pour les entreprises et les clients privés.</p>
 			</div>
 		</div>
 	</section>
@@ -121,7 +112,7 @@ $_SESSION['form_time'] = time();
 					<img src="/img/adv/one.png" alt="">
 					<div class="stats__overlay"></div>
 					<div class="stats__content">
-						<p class="stats__label">Operando desde</p>
+						<p class="stats__label">En activité depuis</p>
 						<h3>2018</h3>
 					</div>
 				</div>
@@ -129,32 +120,32 @@ $_SESSION['form_time'] = time();
 					<img src="/img/adv/two.png" alt="">
 					<div class="stats__overlay"></div>
 					<div class="stats__content">
-						<p class="stats__label">Experiencia media del equipo</p>
-						<h3>15 AÑOS</h3>
+						<p class="stats__label">Expérience moyenne des spécialistes</p>
+						<h3>15 ANS</h3>
 					</div>
 				</div>
 				<div class="stats__card">
 					<img src="/img/adv/three.png" alt="">
 					<div class="stats__overlay"></div>
 					<div class="stats__content">
-						<p class="stats__label">Se convierten en clientes recurrentes</p>
-						<h3>75% DE LOS CLIENTES</h3>
+						<p class="stats__label">Deviennent des clients réguliers</p>
+						<h3>75 % DES CLIENTS</h3>
 					</div>
 				</div>
 				<div class="stats__card">
 					<img src="/img/adv/four.png" alt="">
 					<div class="stats__overlay"></div>
 					<div class="stats__content">
-						<p class="stats__label">Disponemos de más de</p>
-						<h3>45 EQUIPOS</h3>
+						<p class="stats__label">Plus de</p>
+						<h3>45 UNITÉS D’ÉQUIPEMENT</h3>
 					</div>
 				</div>
 				<div class="stats__card">
 					<img src="/img/adv/five.png" alt="">
 					<div class="stats__overlay"></div>
 					<div class="stats__content">
-						<p class="stats__label">Más de</p>
-						<h3>1000 PEDIDOS COMPLETADOS</h3>
+						<p class="stats__label">Plus de</p>
+						<h3>1000 COMMANDES RÉALISÉES</h3>
 					</div>
 				</div>
 			</div>
@@ -165,7 +156,7 @@ $_SESSION['form_time'] = time();
 		<!-- Верхняя тёмная шапка -->
 		<div class="equipment__header">
 			<div class="container_eq">
-				<h2 class="equipment__heading">EQUIPOS</h2>
+				<h2 class="equipment__heading">ÉQUIPEMENT</h2>
 			</div>
 		</div>
 		<!-- Голубая полоса со слайдером -->
@@ -238,16 +229,16 @@ $_SESSION['form_time'] = time();
 			<div class="container equipment__content-inner">
 				<div class="equipment__text">
 					<h3>
-						FABRICACIÓN SEGÚN SUS PLANOS<br>
-						O MUESTRAS
+						FABRICATION SELON VOS PLANS<br>
+						OU ÉCHANTILLONS
 					</h3>
 					<p>
-						Puede proporcionarnos una pieza metálica y solicitar la fabricación de un duplicado.
-						Realizaremos todas las mediciones necesarias, elaboraremos el plano técnico y fabricaremos la pieza requerida.
+						Vous pouvez nous fournir une pièce métallique et commander la fabrication d’un duplicata.
+						Nous effectuerons toutes les mesures nécessaires, établirons le plan technique et fabriquerons la pièce requise.
 					</p>
 				</div>
 				<div class="equipment__cta">
-					<button class="btn btn-primary">SOLICITAR<br>PRESUPUESTO</button>
+					<button class="btn btn-primary">CALCUL<br>DU COÛT DE LA COMMANDE</button>
 				</div>
 			</div>
 		</div>
@@ -255,43 +246,43 @@ $_SESSION['form_time'] = time();
 	<!-- ================= services ================= -->
 	<section class="services services--animate reveal" id="services">
 		<div class="container">
-			<h2 class="services__title">SERVICIOS</h2>
+			<h2 class="services__title">SERVICES</h2>
 			<div class="services__grid">
 				<div class="service-card service-card--1">
 					<div class="service-card__bg"></div>
-					<h3>Mecanizado de torneado y fresado de metales y plásticos</h3>
-					<p>Mecanizado de alta precisión en equipos modernos.</p>
-					<button class="btn btn-primary">desde 10 € por unidad</button>
+					<h3>Usinage par tournage et fraisage des métaux et plastiques</h3>
+					<p>Usinage mécanique de haute précision sur des équipements modernes.</p>
+					<button class="btn btn-primary">à partir de 10 € / pièce</button>
 				</div>
 				<div class="service-card service-card--2">
 					<div class="service-card__bg"></div>
-					<h3>Fabricación de piezas a medida según planos</h3>
-					<p>Producción conforme a sus especificaciones técnicas y muestras.</p>
-					<button class="btn btn-primary">desde 5 € por unidad</button>
+					<h3>Fabrication de pièces sur mesure selon plans</h3>
+					<p>Production selon vos spécifications techniques et échantillons.</p>
+					<button class="btn btn-primary">à partir de 5 € / pièce</button>
 				</div>
 				<div class="service-card service-card--3">
 					<div class="service-card__bg"></div>
-					<h3>Producción en serie y fabricación unitaria</h3>
-					<p>Fabricación de lotes de cualquier volumen.</p>
-					<button class="btn btn-primary">desde 15 € por unidad</button>
+					<h3>Production en série et à l’unité</h3>
+					<p>Fabrication de lots de pièces de tout volume.</p>
+					<button class="btn btn-primary">à partir de 15 € / pièce</button>
 				</div>
 				<div class="service-card service-card--4">
 					<div class="service-card__bg"></div>
-					<h3>Consultoría de ingeniería y procesos</h3>
-					<p>Selección de soluciones óptimas y сопровождение del proyecto.</p>
-					<button class="btn btn-primary">desde 12 € por unidad</button>
+					<h3>Ingénierie et conseil technique</h3>
+					<p>Sélection de solutions optimales et сопровancement du projet.</p>
+					<button class="btn btn-primary">à partir de 12 € / pièce</button>
 				</div>
 				<div class="service-card service-card--5">
 					<div class="service-card__bg"></div>
-					<h3>Operaciones de montaje y procesos secundarios</h3>
-					<p>Procesamiento integral y preparación de productos.</p>
-					<button class="btn btn-primary">desde 8 € por unidad</button>
+					<h3>Assemblage et opérations secondaires</h3>
+					<p>Traitement complet et préparation des produits.</p>
+					<button class="btn btn-primary">à partir de 8 € / pièce</button>
 				</div>
 				<div class="service-card--6">
 					<div class="service-card__bg"></div>
-					<h3>Pedido personalizado</h3>
-					<p>Desarrollo e implementación de soluciones no estándar.</p>
-					<button class="btn btn-primary">Contactar</button>
+					<h3>Commande personnalisée</h3>
+					<p>Développement et réalisation de projets non standard.</p>
+					<button class="btn btn-primary">Nous contacter</button>
 				</div>
 			</div>
 		</div>
@@ -301,26 +292,26 @@ $_SESSION['form_time'] = time();
 		<div class="container">
 			<div class="work-types__grid">
 				<div class="work-types__content">
-					<h2 class="t30 fw7 mb2">Tipos de trabajos de fresado</h2>
-					<p class="t16 mb3">Los trabajos de fresado se utilizan para el mecanizado de diferentes superficies y para realizar una amplia gama de operaciones:</p>
+					<h2 class="t30 fw7 mb2">Types de travaux de fraisage</h2>
+					<p class="t16 mb3">Les opérations de fraisage sont utilisées pour l’usinage de différentes surfaces et pour la réalisation d’un large éventail d’opérations :</p>
 					<ul class="work-types__list mb3">
-						<li>Mecanizado de superficies planas;</li>
-						<li>Creación de ranuras y canales;</li>
-						<li>Fabricación de escalones;</li>
-						<li>Formación de superficies perfiladas;</li>
-						<li>Roscado;</li>
-						<li>Fabricación de engranajes.</li>
+						<li>Usinage de surfaces planes ;</li>
+						<li>Réalisation de rainures et de gorges ;</li>
+						<li>Fabrication d’épaulements ;</li>
+						<li>Formation de surfaces profilées ;</li>
+						<li>Taraudage et filetage ;</li>
+						<li>Fabrication d’engrenages.</li>
 					</ul>
-					<p class="t16 mb2">Para realizar estas operaciones se utilizan diferentes tipos de fresas:</p>
+					<p class="t16 mb2">Différents types de fraises sont utilisés pour ces opérations :</p>
 					<ol class="work-types__list work-types__list--numbered">
-						<li><strong>Cilíndricas</strong> — para el mecanizado de superficies planas;</li>
-						<li><strong>Frontales</strong> — para el fresado de planos y escalones;</li>
-						<li><strong>De disco</strong> — para el mecanizado de ranuras y corte de metal;</li>
-						<li><strong>De extremo</strong> — tipo universal para diversas operaciones;</li>
-						<li><strong>Angulares</strong> — para el mecanizado de superficies inclinadas;</li>
-						<li><strong>Perfiladas</strong> — para crear superficies de forma compleja.</li>
+						<li><strong>Cylindriques</strong> — pour l’usinage de surfaces planes ;</li>
+						<li><strong>À surfacer</strong> — pour le fraisage de plans et d’épaulements ;</li>
+						<li><strong>Disques</strong> — pour l’usinage de rainures et la coupe du métal ;</li>
+						<li><strong>En bout</strong> — type universel pour diverses opérations ;</li>
+						<li><strong>Angulaires</strong> — pour l’usinage de surfaces inclinées ;</li>
+						<li><strong>Profilées</strong> — pour la création de surfaces de forme complexe.</li>
 					</ol>
-					<p class="t16 mb2">La elección del tipo de fresa depende directamente de la naturaleza del trabajo a realizar y de la precisión requerida.</p>
+					<p class="t16 mb2">Le choix du type de fraise dépend directement de la nature des opérations à réaliser et de la précision d’usinage requise.</p>
 				</div>
 				<div class="work-types__video">
 					<div class="video-wrapper">
@@ -337,10 +328,10 @@ $_SESSION['form_time'] = time();
 	<!-- ================= our projects ================= -->
 	<section class="projects ba-block reveal" id="projects">
 		<div class="container">
-			<h2 class="t30 fw7 mb3">Nuestros proyectos</h2>
+			<h2 class="t30 fw7 mb3">Nos projets</h2>
 			<!-- ===== Desktop Slider ===== -->
 			<div class="projects-slider">
-				<button class="projects-arrow projects-arrow--prev" aria-label="Anterior">
+				<button class="projects-arrow projects-arrow--prev" aria-label="Précédent">
 					<svg viewBox="0 0 24 24" width="28" height="28">
 						<path d="M15 6l-6 6 6 6" fill="none" stroke="currentColor" stroke-width="2"/>
 					</svg>
@@ -371,7 +362,7 @@ $_SESSION['form_time'] = time();
 
 					</div>
 				</div>
-				<button class="projects-arrow projects-arrow--next" aria-label="Siguiente">
+				<button class="projects-arrow projects-arrow--next" aria-label="Suivant">
 					<svg viewBox="0 0 24 24" width="28" height="28">
 						<path d="M9 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2"/>
 					</svg>
@@ -394,18 +385,18 @@ $_SESSION['form_time'] = time();
 				<div class="projects-item projects-hidden"><img src="/img/projects/12.webp" alt=""></div>
 			</div>
 			<button class="projects-more-btn">
-				Ver todos los proyectos
+				Tous les projets
 			</button>
 		</div>
 	</section>
 	<!-- ================= cta ================= -->
 	<section class="contact reveal">
 		<div class="container">
-			<h2 class="section-title contact__title">Envíe su proyecto para presupuesto</h2>
+			<h2 class="section-title contact__title">Envoyez votre projet pour devis</h2>
 			<form id="projectForm" class="contact-form" enctype="multipart/form-data" novalidate>
 				<div class="contact-form__content">
 					<div class="contact-form__row">
-						<input type="text" name="name" placeholder="Nombre" requiredpattern="^[A-Za-zА-Яа-яЁё\s]+$">
+						<input type="text" name="name" placeholder="Nom" requiredpattern="^[A-Za-zА-Яа-яЁё\s]+$">
 						<input type="email" name="email" placeholder="Email" required>
 					</div>
 					<div class="contact-form__upload">
@@ -423,23 +414,23 @@ $_SESSION['form_time'] = time();
 								</svg>
 							</div>
 							<div class="upload-text">
-								<p class="upload-title">Añada el plano</p>
-								<p class="upload-sub">Haga clic para seleccionar el archivo</p>
+								<p class="upload-title">Ajoutez un plan</p>
+								<p class="upload-sub">Cliquez pour sélectionner un fichier</p>
 							</div>
 						</label>
 						<div class="file-list"></div>
 						<div class="warning">
-							<p class="warning-text">Se pueden cargar hasta 10 archivos.</p>
+							<p class="warning-text">Vous pouvez télécharger jusqu’à 10 fichiers maximum.</p>
 						</div>
 					</div>
-					<textarea name="message" placeholder="Describa el material, el volumen, la cantidad y los detalles"></textarea>
+					<textarea name="message" placeholder="Indiquez le matériau, le volume, la quantité et les détails"></textarea>
 					<div class="contact-form__captcha">
-						<label>¿Cuánto es <?php echo $a; ?> + <?php echo $b; ?>?</label>
+						<label id="captchaLabel"></label>
 						<input type="number" name="captcha" required>
 					</div>
 					<!-- Honeypot -->
 					<input type="text" name="company" style="display:none"autocomplete="off">
-					<button type="submit">Enviar</button>
+					<button type="submit">Envoyer</button>
 				</div>
 				<div class="form-alert"></div>
 			</form>
@@ -452,12 +443,12 @@ $_SESSION['form_time'] = time();
 				<div class="footer-links">
 					<div class="footer-col">
 						<a class="footer-title">
-							Contacto
+							Contacts
 						</a>
 						<div class="footer-sub">
-							<p class="footer-label">Dirección legal y física</p>
+							<p class="footer-label">Adresse légale et opérationnelle</p>
 							<p>11073 Beograd, Jurija Gagarina str, build 231, local 329, Serbia</p>
-							<p class="footer-label">Correo electrónico</p>
+							<p class="footer-label">Email</p>
 							<p>
 								<a href="mailto:info@reshagro.com">contact@reshagro.com</a>
 							</p>
@@ -465,22 +456,22 @@ $_SESSION['form_time'] = time();
 					</div>
 					<div class="footer-col">
 						<a href="#about" class="footer-title">
-							Sobre nosotros
+							À propos de nous
 						</a>
 					</div>
 					<div class="footer-col">
 						<a href="#equipment" class="footer-title">
-							Equipos
+							Équipement
 						</a>
 					</div>
 					<div class="footer-col">
 						<a href="#services" class="footer-title">
-							Servicios
+							Services
 						</a>
 					</div>
 					<div class="footer-col">
 						<a href="#projects" class="footer-title">
-							Nuestros proyectos
+							Nos projets
 						</a>
 					</div>
 				</div>
@@ -495,37 +486,37 @@ $_SESSION['form_time'] = time();
 		<div class="rg-modal__overlay"></div>
 		<div class="rg-modal__window" role="dialog" aria-modal="true">
 			<button class="rg-modal__close" data-modal-close></button>
-			<h3 class="rg-modal__title">Solicitar presupuesto</h3>
-			<p class="modal_desc">Envíenos los detalles del proyecto y prepararemos un presupuesto en el menor tiempo posible</p>
+			<h3 class="rg-modal__title">Demander un devis</h3>
+			<p class="modal_desc">Envoyez les détails de votre projet et nous préparerons une estimation dans les plus brefs délais</p>
 			<form id="projectFormModal" class="contact-form contact-form--modal" enctype="multipart/form-data">
 				<div class="contact-form__content-modal">
 					<div class="contact-form__row-modal">
-						<input type="text" name="name" placeholder="Nombre" required pattern="^[A-Za-zА-Яа-яЁё\s]+$">
+						<input type="text" name="name" placeholder="Nom" required pattern="^[A-Za-zА-Яа-яЁё\s]+$">
 						<input type="email" name="email" placeholder="Email" required>
 					</div>
-					<textarea class="text_modal" name="message" placeholder="Describa brevemente el proyecto"></textarea>
+					<textarea class="text_modal" name="message" placeholder="Décrivez brièvement votre projet"></textarea>
 					<div class="contact-form__upload">
 						<label class="upload-box">
 							<input type="file" name="files[]" multiple hidden accept=".zip,.jpg,.jpeg,.png,.docx,.xlsx,.pdf,.dxf,.dwg">
 							<div class="upload-icon">
-								<img src="/img/upload.svg" alt="Carga de archivo" width="48" height="48">
+								<img src="/img/upload.svg" alt="Téléchargement de fichier" width="48" height="48">
 							</div>
 							<div class="upload-text">
-								<p class="upload-title">Añada el plano</p>
-								<p class="upload-sub">Haga clic para seleccionar el archivo</p>
+								<p class="upload-title">Ajoutez un plan</p>
+								<p class="upload-sub">Cliquez pour sélectionner un fichier</p>
 							</div>
 						</label>
 						<div class="file-list"></div>
 						<div class="warning">
-							<p class="warning-text">Se pueden cargar hasta 10 archivos.</p>
+							<p class="warning-text">Vous pouvez télécharger jusqu’à 10 fichiers maximum.</p>
 						</div>
 					</div>
 					<div class="contact-form__captcha-modal">
-						<label>¿Cuánto es <?php echo $a; ?> + <?php echo $b; ?>?</label>
+						<label id="captchaLabel"></label>
 						<input type="number" name="captcha" required>
 					</div>
 					<input type="text" name="company" style="display:none" autocomplete="off">
-					<button class="modal_submit_btn" type="submit">Enviar</button>
+					<button class="modal_submit_btn" type="submit">Envoyer</button>
 				</div>
 				<div class="form-alert-modal"></div>
 			</form>
@@ -540,12 +531,12 @@ $_SESSION['form_time'] = time();
 
 		const modalContent = {
 			default: {
-				title: 'Solicitar presupuesto',
-				desc: 'Envíenos los detalles del proyecto y prepararemos un presupuesto en el menor tiempo posible'
+				title: 'Demander un devis',
+				desc: 'Envoyez les détails de votre projet et nous préparerons une estimation dans les plus brefs délais'
 			},
 			auto: {
-				title: '¿Tiene alguna pregunta?',
-				desc: 'Deje su solicitud y le ofreceremos una consulta gratuita'
+				title: 'Des questions ?',
+				desc: 'Laissez une demande et nous vous fournirons une consultation gratuite'
 			}
 		};
 
@@ -662,7 +653,7 @@ $_SESSION['form_time'] = time();
 	</script>
 	<script src="/js/language-switcher.js"></script>
 	<script src="/js/main.js"></script>
-	<script src="/js/es/modal.js"></script>
-	<script src="/js/es/form.js"></script>
+	<script src="/js/fr/modal.js"></script>
+	<script src="/js/fr/form.js"></script>
 </body>
 </html>
