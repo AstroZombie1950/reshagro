@@ -123,18 +123,18 @@ function initEquipmentSlider() {
 	if (!slides.length) return;
 
 	const titles = [
-		"Станок токарно-фрезерный JSL 20AB",
-		"Токарно-фрезерный станок IronMac 508MY",
-		"Станок фрезерный (3+2) CMX 50",
-		"Станок фрезерный (3+2) CMX 70",
-		"Токарно-фрезерный станок CTX 310",
-		"Станок токарно-фрезерный CTX 310",
-		"Станок фрезерный (3+2) DMU 50",
-		"Станок токарно-фрезерный GT 45",
-		"Станок токарно-фрезерный MAZAK QTN 100",
-		"Станок токарно-фрезерный MAZAK QTN 200",
-		"Станок токарно-фрезерный SPECTR 200",
-		"Станок фрезерный SKY MASTER VF 108"
+		"JSL 20AB Turn-Mill CNC Machine",
+		"IronMac 508MY Turn-Mill CNC Machine",
+		"CMX 50 5-Axis (3+2) CNC Milling Machine",
+		"CMX 70 5-Axis (3+2) CNC Milling Machine",
+		"CTX 310 Turn-Mill CNC Machine",
+		"CTX 310 Turn-Mill CNC Machine",
+		"DMU 50 5-Axis (3+2) CNC Milling Machine",
+		"GT 45 Turn-Mill CNC Machine",
+		"MAZAK QTN 100 Turn-Mill CNC Machine",
+		"MAZAK QTN 200 Turn-Mill CNC Machine",
+		"SPECTR 200 Turn-Mill CNC Machine",
+		"SKY MASTER VF 108 CNC Milling Machine"
 	];
 
 	let currentIndex = 0;
@@ -291,7 +291,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 		moreBtn.textContent =
 			grid.classList.contains('is-open')
-			? 'Скрыть'
-			: 'Все работы';
+			? 'Hide'
+			: 'View All Projects';
 	});
 });

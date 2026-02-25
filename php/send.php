@@ -2,46 +2,46 @@
 session_start();
 header('Content-Type: application/json');
 
-$to = "TEMPMAIL@gmail.com";// ----------- почта
-$subject = "Новая заявка с сайта Reshagro";
+$to = "TEMPMAIL@gmail.com"; // ----------- email
+$subject = "New inquiry from Reshagro website";
 
 /* ===== 1. Honeypot ===== */
 if (!empty($_POST['company'])) {
-	echo json_encode(["success" => false, "message" => "Ошибка проверки."]);
+	echo json_encode(["success" => false, "message" => "Verification error."]);
 	exit;
 }
 
-/* ===== 2. Таймер (минимум 3 сек) ===== */
+/* ===== 2. Timer (minimum 3 sec) ===== */
 if (!isset($_SESSION['form_time']) || (time() - $_SESSION['form_time']) < 3) {
-	echo json_encode(["success" => false, "message" => "Форма отправлена слишком быстро."]);
+	echo json_encode(["success" => false, "message" => "The form was submitted too quickly."]);
 	exit;
 }
 
-/* ===== 3. Проверка капчи ===== */
+/* ===== 3. CAPTCHA validation ===== */
 if (!isset($_SESSION['captcha_answer']) || 
 	$_POST['captcha'] != $_SESSION['captcha_answer']) {
 
-	echo json_encode(["success" => false, "message" => "Неверный ответ на капчу."]);
+	echo json_encode(["success" => false, "message" => "Incorrect CAPTCHA answer."]);
 	exit;
 }
 
-/* ===== 4. Валидация данных ===== */
+/* ===== 4. Data validation ===== */
 
 $name = trim($_POST['name']);
 $email = filter_var($_POST['email'], FILTER_VALIDATE_EMAIL);
 $message = trim($_POST['message']);
 
 if (!preg_match("/^[A-Za-zА-Яа-яЁё\s]+$/u", $name)) {
-	echo json_encode(["success" => false, "message" => "Некорректное имя."]);
+	echo json_encode(["success" => false, "message" => "Invalid name format."]);
 	exit;
 }
 
 if (!$email) {
-	echo json_encode(["success" => false, "message" => "Некорректный email."]);
+	echo json_encode(["success" => false, "message" => "Invalid email address."]);
 	exit;
 }
 
-/* ===== 5. Формирование письма ===== */
+/* ===== 5. Email body ===== */
 
 $boundary = md5(time());
 
@@ -51,11 +51,11 @@ $headers .= "Content-Type: multipart/mixed; boundary=\"$boundary\"\r\n";
 
 $body = "--$boundary\r\n";
 $body .= "Content-Type: text/plain; charset=UTF-8\r\n\r\n";
-$body .= "Имя: $name\r\n";
+$body .= "Name: $name\r\n";
 $body .= "Email: $email\r\n\r\n";
-$body .= "Сообщение:\r\n$message\r\n\r\n";
+$body .= "Message:\r\n$message\r\n\r\n";
 
-/* ===== 6. Файлы ===== */
+/* ===== 6. Attachments ===== */
 
 $allowed = ["zip","jpg","jpeg","png","docx","xlsx","pdf","dxf","dwg"];
 $maxSize = 20 * 1024 * 1024;
@@ -64,7 +64,7 @@ $maxFiles = 10;
 if (!empty($_FILES['files']['name'][0])) {
 
 	if (count($_FILES['files']['name']) > $maxFiles) {
-		echo json_encode(["success" => false, "message" => "Слишком много файлов."]);
+		echo json_encode(["success" => false, "message" => "Too many files uploaded."]);
 		exit;
 	}
 
@@ -79,12 +79,12 @@ if (!empty($_FILES['files']['name'][0])) {
 			$ext = strtolower(pathinfo($fileName, PATHINFO_EXTENSION));
 
 			if (!in_array($ext, $allowed)) {
-				echo json_encode(["success" => false, "message" => "Недопустимый формат файла."]);
+				echo json_encode(["success" => false, "message" => "Unsupported file format."]);
 				exit;
 			}
 
 			if ($fileSize > $maxSize) {
-				echo json_encode(["success" => false, "message" => "Файл слишком большой."]);
+				echo json_encode(["success" => false, "message" => "File size exceeds the limit."]);
 				exit;
 			}
 
@@ -101,7 +101,7 @@ if (!empty($_FILES['files']['name'][0])) {
 
 $body .= "--$boundary--";
 
-/* ===== 7. Отправка ===== */
+/* ===== 7. Sending ===== */
 
 $mailSent = mail($to, $subject, $body, $headers);
 
@@ -109,5 +109,5 @@ if ($mailSent) {
 	unset($_SESSION['captcha_answer']);
 	echo json_encode(["success" => true]);
 } else {
-	echo json_encode(["success" => false, "message" => "Ошибка сервера."]);
+	echo json_encode(["success" => false, "message" => "Server error."]);
 }

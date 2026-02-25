@@ -1,70 +1,165 @@
 (function () {
 
-	const switcher = document.querySelector('[data-lang-switcher]');
-	if (!switcher) return;
+	const supported = ['en','de','es','fr','it','pl','ro','ru','sr'];
+	const defaultLang = 'en';
+	const storageKey = 'reshagro_lang';
 
-	const toggle = switcher.querySelector('.lang-switcher__toggle');
-	const dropdown = switcher.querySelector('.lang-switcher__dropdown');
-	const items = switcher.querySelectorAll('li');
+	/* =========================
+	   Utilities
+	========================= */
 
-	/* ===== Определяем текущий язык по URL ===== */
-	function getCurrentLang() {
-		const path = window.location.pathname.split('/')[1];
-		const available = ['en','de','fr','it','es','pl','ro','sr','ru'];
-		return available.includes(path) ? path : 'ru';
+	function normalizePath(path) {
+		return path.replace(/\/+$/, '') || '/';
 	}
 
-	function updateCurrentLangUI() {
-		const current = getCurrentLang();
-		const activeItem = switcher.querySelector(`li[data-lang="${current}"]`);
-		if (!activeItem) return;
-
-		const code = activeItem.dataset.lang.toUpperCase();
-		const flag = activeItem.dataset.flag;
-
-		toggle.querySelector('.lang-code').textContent = code;
-		toggle.querySelector('.lang-flag').textContent = flag;
+	function getBrowserLang() {
+		const lang = navigator.language || navigator.userLanguage;
+		if (!lang) return null;
+		return lang.toLowerCase().split('-')[0];
 	}
 
-	updateCurrentLangUI();
+	function getCurrentLangFromPath() {
+		const path = normalizePath(window.location.pathname.toLowerCase());
 
-	/* ===== Toggle dropdown ===== */
-	toggle.addEventListener('click', function (e) {
-		e.stopPropagation();
-		switcher.classList.toggle('open');
-		toggle.setAttribute(
-			'aria-expanded',
-			switcher.classList.contains('open')
-		);
-	});
+		if (path === '/') return 'en';
 
-	/* ===== Закрытие при клике вне ===== */
-	document.addEventListener('click', function () {
-		switcher.classList.remove('open');
-		toggle.setAttribute('aria-expanded', 'false');
-	});
+		const segments = path.split('/');
+		const maybeLang = segments[1];
 
-	/* ===== Переход на язык ===== */
-	items.forEach(function (item) {
-		item.addEventListener('click', function () {
+		if (supported.includes(maybeLang)) {
+			return maybeLang;
+		}
 
-			const lang = this.dataset.lang;
-			const currentPath = window.location.pathname;
+		return 'en';
+	}
 
-			const segments = currentPath.split('/').filter(Boolean);
+	function buildUrl(lang) {
+		return lang === 'en' ? '/' : '/' + lang + '/';
+	}
 
-			const available = ['en','de','fr','it','es','pl','ro','sr','ru'];
+	function redirectTo(lang) {
 
-			if (segments.length && available.includes(segments[0])) {
-				segments[0] = lang;
-			} else {
-				segments.unshift(lang);
+		if (!supported.includes(lang)) {
+			lang = defaultLang;
+		}
+
+		const target = normalizePath(buildUrl(lang));
+		const current = normalizePath(window.location.pathname);
+
+		if (current !== target) {
+			window.location.replace(target);
+		}
+	}
+
+	/* =========================
+	   Auto Language Detection
+	========================= */
+
+	function autoDetect() {
+
+		const currentPath = normalizePath(window.location.pathname);
+
+		// Автоопределение только если пользователь на корне
+		if (currentPath !== '/') return;
+
+		// Проверяем сохранённый язык
+		const saved = localStorage.getItem(storageKey);
+		if (saved && supported.includes(saved)) {
+			redirectTo(saved);
+			return;
+		}
+
+		// Определяем по браузеру
+		const browserLang = getBrowserLang();
+
+		if (browserLang && supported.includes(browserLang)) {
+			redirectTo(browserLang);
+		} else {
+			redirectTo(defaultLang);
+		}
+	}
+
+	/* =========================
+	   Language Switcher UI
+	========================= */
+
+	function initLangSwitcher() {
+
+		const switcher = document.querySelector('[data-lang-switcher]');
+		if (!switcher) return;
+
+		const toggle = switcher.querySelector('.lang-switcher__toggle');
+		const dropdown = switcher.querySelector('.lang-switcher__dropdown');
+		const codeEl = switcher.querySelector('.lang-code');
+		const flagEl = switcher.querySelector('.lang-flag');
+		const items = switcher.querySelectorAll('[data-lang]');
+
+		const currentLang = getCurrentLangFromPath();
+
+		// Обновляем кнопку текущего языка
+		codeEl.textContent = currentLang.toUpperCase();
+
+		flagEl.src = currentLang === 'en'
+			? '/img/flags/gb.png'
+			: '/img/flags/' + currentLang + '.png';
+
+		flagEl.alt = currentLang.toUpperCase();
+
+		/* ===== Dropdown Toggle ===== */
+
+		toggle.addEventListener('click', function (e) {
+			e.stopPropagation();
+			switcher.classList.toggle('is-open');
+
+			const expanded = switcher.classList.contains('is-open');
+			toggle.setAttribute('aria-expanded', expanded);
+		});
+
+		// Закрытие при клике вне
+		document.addEventListener('click', function () {
+			switcher.classList.remove('is-open');
+			toggle.setAttribute('aria-expanded', 'false');
+		});
+
+		// Не закрывать при клике внутри dropdown
+		dropdown.addEventListener('click', function (e) {
+			e.stopPropagation();
+		});
+
+		// Закрытие по Escape
+		document.addEventListener('keydown', function (e) {
+			if (e.key === 'Escape') {
+				switcher.classList.remove('is-open');
+				toggle.setAttribute('aria-expanded', 'false');
+			}
+		});
+
+		/* ===== Language Selection ===== */
+
+		items.forEach(function (item) {
+
+			const lang = item.getAttribute('data-lang');
+
+			// Можно добавить активный класс текущему
+			if (lang === currentLang) {
+				item.classList.add('is-active');
 			}
 
-			const newPath = '/' + segments.join('/');
+			item.addEventListener('click', function () {
 
-			window.location.href = newPath + window.location.search;
+				if (!supported.includes(lang)) return;
+
+				localStorage.setItem(storageKey, lang);
+				redirectTo(lang);
+			});
 		});
+	}
+
+	/* ========================= */
+
+	document.addEventListener('DOMContentLoaded', function () {
+		autoDetect();
+		initLangSwitcher();
 	});
 
 })();

@@ -171,7 +171,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 		if (files.length > maxFiles) {
 			setInvalid(fileInput);
-			showError("Максимум 10 файлов.");
+			showError("Maximum 10 files allowed.");
 			return;
 		}
 
@@ -180,7 +180,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 			if (!allowedExtensions.includes(ext) || file.size > maxFileSize) {
 				setInvalid(fileInput);
-				showError("Недопустимый файл или превышен размер.");
+				showError("Invalid file format or file size exceeds the limit.");
 				return;
 			}
 		}
@@ -202,14 +202,14 @@ document.addEventListener("DOMContentLoaded", function () {
 			submitBtn.classList.remove("is-loading");
 
 			if (result.success) {
-				showSuccess("Заявка успешно отправлена. Мы свяжемся с вами в ближайшее время.");
+				showSuccess("Your inquiry has been successfully submitted. We will contact you shortly.");
 			} else {
-				showError(result.message || "Ошибка отправки.");
+				showError(result.message || "Submission error.");
 			}
 
 		} catch (error) {
 			submitBtn.classList.remove("is-loading");
-			showError("Ошибка соединения.");
+			showError("Connection error.");
 		}
 	});
 

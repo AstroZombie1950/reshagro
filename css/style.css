@@ -200,7 +200,7 @@ section {
 	transition: transform .25s ease;
 }
 
-.lang-switcher.open .lang-arrow {
+.lang-switcher.is-open .lang-arrow {
 	transform: rotate(180deg);
 }
 
@@ -222,7 +222,7 @@ section {
 	z-index: 1000;
 }
 
-.lang-switcher.open .lang-switcher__dropdown {
+.lang-switcher.is-open .lang-switcher__dropdown {
 	opacity: 1;
 	visibility: visible;
 	transform: translateY(0);
